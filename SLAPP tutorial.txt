@@ -1,0 +1,38 @@
+		SIMPLEBUG SLAPP TUTORIAL
+
+
+SLAPP = Swarm-Like Agent Protocol in Python, by Pietro Terna
+
+Swarm  = www.swarm.org 
+Python = www.python.org
+
+This tutorial takes the user through the development of a SLAPP
+model that makes use of a lot of the functionality of Swarm.
+
+The model consists of bugs taking random walks in a 2D space.
+
+We start with a very simple, essentially plain program, for
+a bug taking a random walk. Through a progression of models
+we introduce basic object-oriented and swarm style programming.
+
+Although this is a particularly simple exercise, it shows how 
+easy it is to compose fairly complex software from simple
+building blocks. 
+
+In this directory we have several subdirectories, each with a complete
+application and a README file that walks you through the code.
+
+You should start with the "start 1 plainProgrammingBug" application, and then
+proceed in the following order (the start files can be found in the folders with 
+the same number):
+
+start 1 plainProgrammingBug
+start 2 basicObjectProgrammingBug
+start 3 basicObjectProgrammingManyBugs
+start 4 basicObjectProgrammingManyBugs_bugExternal_+_shuffle
+start 5 objectSwarmModelBugs
+start 6 objectSwarmObserverBugs_AESOP_turtleLib
+start 7 objectSwarmObserverTkBugs (in '7 toBeDeveloped objectSwarmObserverTkBugs')
+start 7b Tk test (in '7b toBeDeveloped Tk test')
+
+7 and 7b are presently under development.
