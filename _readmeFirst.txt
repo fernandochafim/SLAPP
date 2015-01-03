@@ -2,7 +2,7 @@ Here we have both a tutorial and an agent-based simulation shell,
 coming from Swarm (www.swarm.org) and named SLAPP, for Swarm-Like Agent 
 Protocol in Python.
 
-You can find SLAPP in folder # 6.
+You can find SLAPP as shell in the folder # 6.
 
 The basic scheme of the tutorial, and all the files with the 'Swarm_original' 
 prefix in their name, are coming from the tutorial originally distributed by the
