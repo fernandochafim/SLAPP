@@ -22,7 +22,7 @@ building blocks.
 In this directory we have several subdirectories, each with a complete
 application and a README file that walks you through the code.
 
-You should start with the "1 plainProgrammingBug" application, and then
+You should start with the "1 plainProgrammingBug" folder, and then
 proceed in the following order (the start files can be found in the folders with 
 the same number):
 
