@@ -1,0 +1,6 @@
+Required libraries
+
+To use the schedule.xls file it is necessary to install
+the Python lib xlrd, which is at http://pypi.python.org/pypi/xlrd
+Versions of Excel supported:
+    2004, 2003, 2002, XP, 2000, 97, 95, 5.0, 4.0, 3.0.
