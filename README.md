@@ -1,6 +1,6 @@
-SLAPP
+SLAPP <img src="./slapp-logo.png" height="90" />
 =====
-<img src="./slapp-logo.png" height="90" />
+
 
 
 Swarm-Like Agent Protocol in Python
