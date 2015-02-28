@@ -3,7 +3,7 @@
 
 # 'project' is both the name of the application and of the subfolder that
 # contains it
-project = raw_input("SLAPP 0.91\nProject name? ")
+project = raw_input("SLAPP 0.911\nProject name? ")
 
 import os
 names=os.listdir("./")

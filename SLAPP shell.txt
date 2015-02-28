@@ -1,8 +1,8 @@
 SLAPP, as Swarm-Like Agent Protocol in Python, is in folder # 6,
 “6 objectSwarmObserverAgents_AESOP_turtleLib_NetworkX”.
 
-Install the required libraries (as explained in the two Warning files),
-then run
+Install the required libraries (as explained in the two Warning files
+into that folder), then run
 
 python start.py
 
