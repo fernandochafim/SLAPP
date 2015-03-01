@@ -3,7 +3,7 @@
 
 SLAPP = Swarm-Like Agent Protocol in Python, by Pietro Terna
 
-Swarm  = www.swarm.org 
+Swarm  = www.swarm.org
 Python = www.python.org
 
 This tutorial introduces the user through the development of a SLAPP
@@ -15,15 +15,15 @@ We start with a very simple, essentially plain program, about
 a bug taking a random walk. Through a progression of models,
 we introduce basic object-oriented and Swarm style programming.
 
-Although this is a quite simple exercise, it shows how 
+Although this is a quite simple exercise, it shows how
 easy it is to compose fairly complex software from simple
-building blocks. 
+building blocks.
 
 In this directory we have several subdirectories, each with a complete
 application and a README file that walks you through the code.
 
 You should start with the "1 plainProgrammingBug" folder, and then
-proceed in the following order (the start files can be found in the folders with 
+proceed in the following order (the start files can be found in the folders with
 the same number):
 
 1 plainProgrammingBug
@@ -31,5 +31,5 @@ the same number):
 3 basicObjectProgrammingManyBugs
 4 basicObjectProgrammingManyBugs_bugExternal_+_shuffle
 5 objectSwarmModelBugs
-6 6 objectSwarmObserverAgents_AESOP_turtleLib_NetworkX
+6 objectSwarmObserverAgents_AESOP_turtleLib_NetworkX
 7 (toBeDeveloped_aFewHints)
