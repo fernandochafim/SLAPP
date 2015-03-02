@@ -7,7 +7,9 @@ Swarm-Like Agent Protocol in Python
 
 Here you have SLAPP v.0.91 (in the [SLAPP repository](http://eco83.econ.unito.it/terna/slapp_dep) you have related material and old versions).
 
-A reference manual is coming (expected with version 1.0, in June 2015)
+A reference manual is coming (expected with version 1.0, in June 2015).
+
+Five chapters of a forthcoming [book](http://www.palgrave.com/page/detail/agentbased-models-of-the-economy-/?K=9781137339805) will be related to SLAPP.
 
 ---
 SLAPP logo: credits to [Steve Rogers](https://www.linkedin.com/in/shrogers).
