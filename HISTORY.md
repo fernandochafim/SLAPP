@@ -11,4 +11,4 @@
 
 (2015 04 10)
 
-0.92 Introduced in folder 6, file start.py, a *debug* common variable; if set to True , all the try/excpt structures will be bypassed, so the errors will be managed directly by the Python interpreter;  this choice can be useful when you build a new project and as an expert user you want to check the errors in a basic way
+0.92 Introduced in folder 6, file start.py, a *debug* common variable; if set to True, a large part of the try/except structures will be bypassed, so the errors will be managed directly by the Python interpreter;  this choice can be useful when you build a new project and as an expert user you want to check the errors in a basic way
