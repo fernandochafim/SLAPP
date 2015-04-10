@@ -20,26 +20,26 @@ class Agent():
             self.maxLength=common.maxLenght
             self.maxSector=common.maxSector
             self.factoryInWhichRecipeIs=None
-            
+
         if agType == 'factories':
             self.sector=sector
             self.recipeWaitingList=[]
             common.orderedListOfNodes.append(self)
             #use to keep the order
             #in output (ex. adjacency matrix)
-            
+
         self.myWorldState = myWorldState
         self.agType=agType
 
         # the graph
         if gvf.getGraph() == 0: gvf.createGraph()
-        
+
         # the agent
         if self.agType == "factories":
          if common.verbose: print "agent of type", self.agType, \
                "#", self.number, "has been created at", xPos, ",", yPos, \
         	      ' in production sector ', self.sector
-         
+
          common.g.add_node(self)
          common.g.node[self]['sector']=sector
          gvf.colors[self]="LightGray"
@@ -50,16 +50,16 @@ class Agent():
          self.xPos=xPos
          self.yPos=yPos
          self.sector=sector
-         
+
         if self.agType == "recipes":
          if common.verbose: print "agent of type", self.agType, "#", self.number, \
         	      "has been created"
 
-        
-    # get graph 
+
+    # get graph
     def getGraph(self):
         return common.g
-         
+
 
     # add an operating set
     def setAnOperatingSet(self,aSet):
@@ -85,7 +85,7 @@ class Agent():
     # get operating agent type
     def getAgentType(self):
         return self.agType
-	   
+
     # ",**d" in the parameter lists of the methods is a place holder
     # in case we use, calling the method, a dictionary as last par
 
@@ -95,7 +95,7 @@ class Agent():
 
         if self.content != []: return
 
-        self.canMove=True        
+        self.canMove=True
         length=random.randint(1,self.maxLength)
         for i in range(length+1):
             self.content.append(random.randint(1,self.maxSector))
@@ -103,14 +103,14 @@ class Agent():
 
         if common.verbose: print "recipe %d now contains the sequence: " \
                            % (self.number), self.content
-                                    
+
 
     # search for factories
     def searchForSector(self):
         if self.agType != "recipes": return
 
         if not self.canMove: return
-        
+
         step=self.content[0] # first step to be done
 
         res=gvf.findNodesFromSector(step)
@@ -157,7 +157,7 @@ class Agent():
 
         if res != []: return True
         else:         return False
-        
+
 
     # waiting list in factories
     def addToRecipeWaitingList(self, recipe):
@@ -170,6 +170,7 @@ class Agent():
                                   (self.number,len(self.recipeWaitingList))
 
         #update factory label
+        #the try below is not subject to debug
         try:    pseudoL=common.g[self][self]['pseudoLabel']
         except: pseudoL=""
         gvf.common.g_labels[self]=str(self.number)+" ("+\
@@ -191,7 +192,7 @@ class Agent():
              #if next step cannot be accomplished, the recipe is locked here
         if len(currentRecipe.content)==1:
              self.recipeWaitingList.remove(currentRecipe)
-          
+
         if common.verbose: print "factory %d producing (recipe %d)" % (self.number, currentRecipe.number)
 
         currentRecipe.content.pop(0)
@@ -201,7 +202,7 @@ class Agent():
             currentRecipe.canMove=False
             if common.verbose: print "recipe %d completed in factory %d" \
                   % (currentRecipe.number,self.number)
-                                                    
+
 
     # addAFactory
     def addAFactory(self):
@@ -273,7 +274,7 @@ class Agent():
         #        print aR.number, aR.factoryInWhichRecipeIs,
         #        aR.content
         #else: print "None"
-        
+
         if self.recipeWaitingList != []:
             for aRecipe in self.recipeWaitingList:
                 aRecipe.content = []
@@ -287,7 +288,7 @@ class Agent():
                 print aR.number, aR.factoryInWhichRecipeIs, aR.content
         else: print "None"
         """
-        
+
         common.g.remove_node(toBeRemoved)
         #print "removeItself residual nodes in graph", common.g.nodes()
 
@@ -295,7 +296,3 @@ class Agent():
 def modPosition():
     if random.randint(0,1)==0:return random.randint(-8,-6)
     else:                     return random.randint( 6, 8)
-
-
-
-

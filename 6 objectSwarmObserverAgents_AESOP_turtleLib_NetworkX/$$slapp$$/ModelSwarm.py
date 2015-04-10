@@ -8,6 +8,10 @@ import os
 from mActions import *
 from turtle import *
 
+# in this module the try/except structures are not cotrolled for debug
+# these try/except constucts, indeed, are not intended to control user errors,
+# but a regular flow of inputs
+
 task="0 0".split()
 
 class ModelSwarm:
@@ -16,7 +20,7 @@ class ModelSwarm:
         project=project0
 
         # the environment
-        task="0 0".split() #in case of repeated execution without restarting the shell 
+        task="0 0".split() #in case of repeated execution without restarting the shell
         self.ff="" #in case of repeated execution without restarting the shell
         self.nAgents = nAgents
         self.agentList = []
@@ -54,14 +58,14 @@ class ModelSwarm:
             self.worldStateList.append(aWorldState)
 
         leftX =int(-self.worldXSize/2)
-        rightX=int(self.worldXSize-1 -self.worldXSize/2) 
+        rightX=int(self.worldXSize-1 -self.worldXSize/2)
         bottomY =int(-self.worldYSize/2)
-        topY=int(self.worldYSize-1 -self.worldYSize/2) 
+        topY=int(self.worldYSize-1 -self.worldYSize/2)
 
         # internal agents
         for i in range(self.nAgents):
             anAgent = Agent(i, self.worldStateList[0],
-                    random.randint(leftX,rightX), 
+                    random.randint(leftX,rightX),
                     random.randint(bottomY,topY), leftX,rightX,
                     bottomY,topY,agType="bland")
             self.agentList.append(anAgent)
@@ -107,7 +111,7 @@ class ModelSwarm:
                         anAgent.setAnOperatingSet(opSet)
                         print "including agent #", num, \
                               "into the operating set", opSet
-           f.close()     
+           f.close()
 
         if self.operatingSets != []:
          for anAgent in self.agentList:
@@ -118,10 +122,10 @@ class ModelSwarm:
 
 
         print
-            
+
 
     # actions
-    def buildActions(self): 
+    def buildActions(self):
 
         modelActions=open("./"+project+"/modelActions.txt")
         mList=modelActions.read().split()
@@ -187,7 +191,7 @@ class ModelSwarm:
                     try:    self.share = float(task[1]) # does task[1] contains
                                                         # a int or float number?
                     except: pass
-                    
+
                     if self.share > 0:
                         tmpList=localList[:]
                         del localList[:]
@@ -225,7 +229,7 @@ class ModelSwarm:
                                                           # an int or float number?
                     except: pass
 
-                    
+
                     if self.share > 0:
                         tmpList=localList[:]
                         del localList[:]
@@ -251,10 +255,10 @@ class ModelSwarm:
                     self.share=0
                     localList=address.worldStateList[:]
                     self.applyFromSchedule(localList,task)
-                   
+
         self.actionGroup100.do = do100 # do is a variable linking a method
-    
-    
+
+
 
 
 
@@ -278,7 +282,7 @@ class ModelSwarm:
                     # self here is the model env.
                     # not added automatically
                     # being do a variable
-                    
+
 
                 # external schedule, in pos. -1
                 if subStep == "read_script":
@@ -293,7 +297,7 @@ class ModelSwarm:
 
                 # other steps
                 if not found:
-                 found=otherSubSteps(subStep, self)    
+                 found=otherSubSteps(subStep, self)
 
                 if not found: print "Warning: step %s not found in Model" % subStep
 

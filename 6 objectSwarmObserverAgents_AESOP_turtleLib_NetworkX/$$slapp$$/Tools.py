@@ -1,5 +1,6 @@
 import random
 import os
+import commonVar as common
 
 """
 A memo from
@@ -16,7 +17,7 @@ binds identifier1  to a tuple whose items are the extra positional
 arguments (or the empty tuple, if there are none). Similarly,
 identifier2  gets bound to a dictionary whose items are the names
 and values of the extra named arguments (or the empty dictionary,
-if there are none). 
+if there are none).
 """
 
 # dictionary of the action groups
@@ -28,15 +29,17 @@ def askEachAgentInCollection(collection,method,**k):
 
     for a in collection:
             #print "\naskEachAgentInCollection", a.agType, a.number, method
-            """ 
+            """
             if a.agType=="recipes" and a.factoryInWhichRecipeIs!=None:
                print "askEachAgentInCollection", a.number, "is in", a.factoryInWhichRecipeIs.number
             if a.agType=="recipes" and a.factoryInWhichRecipeIs==None:
                print "askEachAgentInCollection", a.number, "is in", a.factoryInWhichRecipeIs
             """
-            try:
+            if common.debug: method(a,**k)
+            else:
+             try:
                 method(a,**k)
-            except:
+             except:
               print 'cannot apply (case 0) ', method, ' to agent number', \
                     a.number, 'of type ',a.agType
               if a.agType=="recipes": print "first step", a.content[0]
@@ -51,8 +54,10 @@ def askEachAgentInCollectionAndExecLocalCode(collection,method,**k):
     setLocalCode("")
 
     for a in collection:
-            try: method(a,**k)
-            except:
+            if common.debug: method(a,**k)
+            else:
+             try: method(a,**k)
+             except:
               print 'cannot apply (case 1) ', method, ' to agent number', \
                     a.number
               pass
@@ -60,14 +65,16 @@ def askEachAgentInCollectionAndExecLocalCode(collection,method,**k):
             # be placed into the agent methods
 
             execLocalCode()
-            
+
 
 
 # applying a method to an instance of a class
 def askAgent(agent,method,**k):
     """ agent, method, dict. of the parameters (may be empty)"""
-    try: method(agent,**k)
-    except:
+    if common.debug: method(agent,**k)
+    else:
+     try: method(agent,**k)
+     except:
         print 'cannot apply (case 2) ', method, ' to agent number', \
               a.number
         pass
@@ -76,9 +83,11 @@ def askAgent(agent,method,**k):
 def askAgentAndExecLocalCode(agent,method,**k):
     """ agent, method, dict. of the parameters (may be empty)"""
     setLocalCode("")
-    
-    try: method(agent,**k)
-    except:
+
+    if common.debug: method(agent,**k)
+    else:
+     try: method(agent,**k)
+     except:
         print 'cannot apply (case 3) ', method, ' to agent number', \
               a.number
         pass
@@ -132,4 +141,3 @@ def getLocalCode():
 def setLocalCode(code):
       global localCode
       localCode=code
-

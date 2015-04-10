@@ -16,6 +16,10 @@
 #html colors
 #http://www.w3schools.com/html/html_colornames.asp
 
+# in this module the try/except structures are not cotrolled for debug
+# these try/except constucts, indeed, are not intended to control user errors,
+# but a regular flow of inputs
+
 
 import networkx as nx
 import matplotlib.pyplot as plt
@@ -32,7 +36,7 @@ def createGraph():
     common.g=nx.DiGraph() # directed graph, instead of nx.Graph()
     colors={}
     pos={}
-    common.g_labels={}            
+    common.g_labels={}
     common.g_edge_labels={}  #copy the address of the labels of the edges
 
 # searching tools
@@ -60,7 +64,7 @@ def createEdge(a, b):
      # verifying the presence of the edge in the other direction
      try:
       otherW = common.g[b][a]['weight']
-      common.g_edge_labels[a,b]="w.s %d and %d" % (common.g[a][b]['weight'],otherW)	
+      common.g_edge_labels[a,b]="w.s %d and %d" % (common.g[a][b]['weight'],otherW)
       common.g_edge_labels[b,a]=""
      except:
       common.g_edge_labels[a,b]="w. %d" % common.g[a][b]['weight']
@@ -71,8 +75,8 @@ def createEdge(a, b):
                                       % common.g[a][b]['weight']
 
 
-# using networkX and matplotlib case 
-def closeNetworkXdisplay(): 
+# using networkX and matplotlib case
+def closeNetworkXdisplay():
     plt.close()
 
 def openClearNetworkXdisplay():
@@ -93,7 +97,7 @@ def pruneEdges():
 
     if not common.prune: return
     common.prune=False
-    
+
     print "New threshold to prune: < %d" % common.pruneThreshold
 
     edges=common.g.edges()
@@ -126,7 +130,7 @@ def drawGraph():
 
     # draw_netwokx is well documented at
     # https://networkx.github.io/documentation/latest/reference/
-    # generated/networkx.drawing.nx_pylab.draw_networkx.html 
+    # generated/networkx.drawing.nx_pylab.draw_networkx.html
     #nx.draw_networkx(agentGraph,    font_size=10,node_size=500, \
     clearNetworkXdisplay()
     pruneEdges()
@@ -174,7 +178,7 @@ def drawGraph():
     # http://networkx.lanl.gov/reference/generated/
     # networkx.algorithms.centrality.betweenness_centrality.html
     print
-    print "betweenness_centrality" 
+    print "betweenness_centrality"
     common.btwn = nx.betweenness_centrality(common.g, normalized=False, weight='weight')
     #print btw
     for i in range(len(common.orderedListOfNodes)):
@@ -192,4 +196,3 @@ def drawGraph():
     for i in range(len(common.orderedListOfNodes)):
         print common.orderedListOfNodes[i].number, \
               common.clsn[common.orderedListOfNodes[i]]
-    
