@@ -18,7 +18,7 @@ else:
  from ObserverSwarm import *
  import commonVar as common
 
- common.debug=True  # if debug il True a large part of the try/except
+ common.debug=False # if debug il True a large part of the try/except
                     # structures will be bypassed, so the errors will
                     # be managed directly by the Python interpreter
 
