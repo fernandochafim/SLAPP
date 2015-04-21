@@ -11,7 +11,7 @@ from parameters import *
 import commonVar as common
 import os
 
-cycle=1
+common.cycle=1
 
 class ObserverSwarm:
 
@@ -22,11 +22,11 @@ class ObserverSwarm:
         self.v_=[]
         self.n_=[]
         penPosition.setPen(self)
-        
+
     # create objects
     def buildObjects(self):
-        global cycle
-        cycle=1
+        #global cycle
+        common.cycle=1
 
         loadParameters(self) #a function, to which we pass self
 
@@ -41,7 +41,7 @@ class ObserverSwarm:
     def buildActions(self):
 
         global project
-        print "#### Project", project,"starting."     
+        print "#### Project", project,"starting."
         print
 
         observerActions=open("./"+project+"/observerActions.txt")
@@ -55,19 +55,19 @@ class ObserverSwarm:
         # list can be also different
         self.actionGroup1 = ActionGroup ("clock")
         def do1(address, nCycles, actionList):
-            global cycle
-            cycle+=1 #the clock running
-            print "Time =%2d" % cycle
-            if cycle>nCycles:
+            #global cycle
+            common.cycle+=1 #the clock running
+            print "Time =%2d" % common.cycle
+            if common.cycle>nCycles:
                  insertElementNextPosition(actionList,"end")
         self.actionGroup1.do = do1 # do is a variable linking a method
 
         self.actionGroup1b = ActionGroup ("visualizeNet")
         self.actionGroup1b.do = do1b # do is a variable linking a method
-    
+
         self.actionGroup2a = ActionGroup ("ask_all")
         self.actionGroup2a.do = do2a # do is a variable linking a method
-    
+
         self.actionGroup2b = ActionGroup ("ask_one")
         self.actionGroup2b.do = do2b # do is a variable linking a method
 
@@ -81,17 +81,17 @@ class ObserverSwarm:
             self.conclude=True
         self.actionGroup3.do = do3 # do is a variable linking a method
 
-        
+
 
     # run
     def run(self):
-        global cycle
-        print "Time =%2d" % cycle
+        #global cycle
+        print "Time =%2d" % common.cycle
 
         if self.nCycles==0: print "The # of required cycles is 0. "
         while not self.conclude and self.nCycles>0:
-            
-            localEventList=self.actionList[:]   
+
+            localEventList=self.actionList[:]
 
             while len(localEventList)>0 and not self.conclude:
                 subStep=extractASubStep(localEventList)
@@ -100,10 +100,10 @@ class ObserverSwarm:
 
                 if subStep == "modelStep":
                     found=True
-                    self.modelSwarm.step(cycle)
+                    self.modelSwarm.step(common.cycle)
                     # in a reasonable way, the model makes a step before
                     # that the observer looks at the effects of model actions
- 
+
                 if subStep == "clock":
                     found=True
                     self.actionGroup1.do(self, self.nCycles, localEventList)
@@ -113,15 +113,15 @@ class ObserverSwarm:
 
                 if subStep == "ask_all":
                     found=True
-                    self.actionGroup2a.do(self, cycle)
+                    self.actionGroup2a.do(self, common.cycle)
 
                 if subStep == "ask_one":
                     found=True
-                    self.actionGroup2b.do(self, cycle)
+                    self.actionGroup2b.do(self, common.cycle)
 
                 # other steps
                 if not found:
-                 found=otherSubSteps(subStep, self)    
+                 found=otherSubSteps(subStep, self)
 
                 if subStep == "end":
                     found=True
@@ -132,5 +132,5 @@ class ObserverSwarm:
                     gvf.closeNetworkXdisplay()
 
                 if not found: print "Warning: step %s not found in Observer" % subStep
-                    
+
         if self.modelSwarm.getFile() != "": self.modelSwarm.getFile().close()

@@ -16,3 +16,7 @@
 (2015 04 10)
 
 0.921 Set, in start.py, common.debug=_False_ as default
+
+(2015 04 21)
+
+Modified ObserverSwarm.py correcting cycle => common.cycle to facilitate the access to this information in any part of the applications
