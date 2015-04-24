@@ -8,9 +8,14 @@ import os
 from mActions import *
 from turtle import *
 
-# in this module the try/except structures are not cotrolled for debug
-# these try/except constucts, indeed, are not intended to control user errors,
-# but a regular flow of inputs
+# in this module, a few of the try/except structures are not cotrolled
+# for debug
+
+# these try/except constucts, indeed, are not intended to control user
+# errors, but a regular flow of inputs
+
+# other try/execpt structures are instead controlled for debug
+
 
 task="0 0".split()
 
@@ -322,28 +327,32 @@ class ModelSwarm:
         #if task[0] is 'all' or a type of agent
         if check(task[0],self.types):
             if self.share!=0:
+               if common.debug: exec "askEachAgentInCollection(localList,Agent"+"."+task[2]+")"
+               else:
                 try: exec "askEachAgentInCollection(localList,Agent"+"."+task[2]+")"
                 except:
-                    print "Warning, method", task[2],"does not exist in agents"
-                    pass
+                    print "Warning, method", task[2],"does not exist in class Agent"
             else:
+               if common.debug: exec "askEachAgentInCollection(localList,Agent"+"."+task[1]+")"
+               else:
                 try: exec "askEachAgentInCollection(localList,Agent"+"."+task[1]+")"
                 except:
-                    print "Warning, method", task[1],"does not exist in agents"
-                    pass
+                    print "Warning, method", task[1],"does not exist in class Agent"
 
         #if task[0] is an opSet
         if task[0] in self.operatingSets:
             if self.share!=0:
+               if common.debug: exec "askEachAgentInCollection(localList,Agent"+"."+task[2]+")"
+               else:
                 try: exec "askEachAgentInCollection(localList,Agent"+"."+task[2]+")"
                 except:
-                    print "Warning, method", task[2],"does not exist in agents"
-                    pass
+                    print "Warning, method", task[2],"does not exist in class Agent"
             else:
+               if common.debug: exec "askEachAgentInCollection(localList,Agent"+"."+task[1]+")"
+               else:
                 try: exec "askEachAgentInCollection(localList,Agent"+"."+task[1]+")"
                 except:
-                    print "Warning, method", task[1],"does not exist in agents"
-                    pass
+                    print "Warning, method", task[1],"does not exist in class Agent"
 
 
 

@@ -21,6 +21,13 @@
 
 0.922 Modified ObserverSwarm.py correcting cycle => common.cycle to facilitate the access to this information in any part of the applications
 
-()
+(2015 04 24)
 
-0.93
+0.93 Added the project 'debug' to check debug capabilities. Have a look to the
+     file debug.txt in the folder 'debug' of folder
+     '6 objectSwarmObserverAgents_AESOP_turtleLib_NetworkX'
+
+     Modified a few error message of ModelSwarm.py if the required method does not
+     exist
+
+     Improved the Tools.py output in case of error on a method

@@ -35,10 +35,15 @@ class Agent:
     # ",**d" in the parameter lists of the methods is a place holder
     # in case we use, calling the method, a dictionary as last par
 
-    # eating (to be developed)
+    # check the clock
     def checkClock(self,**d):
         print "I'm %s agent # %d: " % (self.agType,self.number),
         print "clock is at ", common.cycle
+
+    # check the superClock
+    def checkSuperClock(self,**d):
+        print "I'm %s agent # %d: " % (self.agType,self.number),
+        print "clock is at ", common.cycles
 
     # the action, also jumping
     def randomMovement(self,**k):

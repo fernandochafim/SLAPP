@@ -40,7 +40,7 @@ def askEachAgentInCollection(collection,method,**k):
              try:
                 method(a,**k)
              except:
-              print 'cannot apply (case 0) ', method, ' to agent number', \
+              print 'cannot apply (case 0) method', method.__name__, 'to agent number', \
                     a.number, 'of type ',a.agType
               if a.agType=="recipes": print "first step", a.content[0]
               pass
@@ -58,7 +58,7 @@ def askEachAgentInCollectionAndExecLocalCode(collection,method,**k):
             else:
              try: method(a,**k)
              except:
-              print 'cannot apply (case 1) ', method, ' to agent number', \
+              print 'cannot apply (case 1) method', method.__name__, 'to agent number', \
                     a.number
               pass
             # if we use k (a dictionary), the same notation has to
@@ -75,7 +75,7 @@ def askAgent(agent,method,**k):
     else:
      try: method(agent,**k)
      except:
-        print 'cannot apply (case 2) ', method, ' to agent number', \
+        print 'cannot apply (case 2) method', method.__name__, 'to agent number', \
               a.number
         pass
 
@@ -88,7 +88,7 @@ def askAgentAndExecLocalCode(agent,method,**k):
     else:
      try: method(agent,**k)
      except:
-        print 'cannot apply (case 3) ', method, ' to agent number', \
+        print 'cannot apply (case 3) method', method.__name__, 'to agent number', \
               a.number
         pass
 
