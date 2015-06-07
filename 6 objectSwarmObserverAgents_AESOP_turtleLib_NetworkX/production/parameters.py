@@ -7,27 +7,27 @@ import matplotlib as mplt
 
 def loadParameters(self):
 
-  print "NetworkX version %s running" % nx.__version__ 
-  print "Matplotlib version %s running\n" % mplt.__version__ 
+  print "NetworkX version %s running" % nx.__version__
+  print "Matplotlib version %s running\n" % mplt.__version__
 
-  nxv=nx.__version__ 
+  nxv=nx.__version__
   if nxv<'1.9.1':
 		print "NetworkX 1.9.1 or greater required"
 		os.sys.exit(1)
-  
+
   mySeed = input("random number seed (1 to get it from the clock) ")
   if mySeed == 1:
         random.seed()
   else:
         random.seed(mySeed)
-        
+
   self.nAgents = 0
   print "No 'bland' agents"
 
   #self.worldXSize= input("X size of the world? ")
   self.worldXSize=1
   print "X size of the world not relevant"
-  
+
   #self.worldYSize= input("Y size of the world? ")
   self.worldYSize=50
   print "y size of the world not relevant"
@@ -37,10 +37,9 @@ def loadParameters(self):
   common.maxSector=6
   print "recipes: max lenght", common.maxLenght, "and max sector number", common.maxSector
 
-  
+
   self.nCycles = input("How many cycles? (0 = exit) ")
 
-  v = raw_input("verbose? [y]/n) ")
-  if v=="" or v=="y" or v=="Y":
-    common.verbose=True #default True
-
+  v = raw_input("verbose? (y/[n]) ")
+  if v=="y" or v=="Y":
+    common.verbose=True #predefined False
