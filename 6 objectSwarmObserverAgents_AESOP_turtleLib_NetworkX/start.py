@@ -27,8 +27,8 @@ if "project.txt" in names:
     # interferences between the control characters in the file and the
     # path definition
     print "path and project = " + pathAndProject
-    confirm=raw_input("do you confirm? (y/n): ")
-    if confirm == "y": found=True
+    confirm=raw_input("do you confirm? ([y]/n): ")
+    if confirm == "y" or confirm == "Y" or confirm == "": found=True
     currentProject.close()
 
 if confirm == "y":
