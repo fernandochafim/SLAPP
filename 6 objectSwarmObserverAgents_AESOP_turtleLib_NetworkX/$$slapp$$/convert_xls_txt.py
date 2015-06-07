@@ -42,7 +42,7 @@ def out_table(sh, book,f,rec): #!!!!!!!!!!
               #print '          macro ', sh.cell_value(r,c+1) #test
               if book.sheet_names().count(sh.cell_value(r,c+1))==0:
                   print "ERROR: sheet '"+sh.cell_value(r,c+1)+"' missing"
-                  turtle.bye() # does not create problems if the graphic space is missing 
+                  turtle.bye() # does not create problems if the graphic space is missing
                   os.sys.exit(1)
               sh_macro=book.sheet_by_index(book.sheet_names()\
                                       .index(sh.cell_value(r,c+1)))
@@ -53,9 +53,9 @@ def out_table(sh, book,f,rec): #!!!!!!!!!!
                   if sh.cell_value(r-1,0)=="#": #New
                     print >>f, "#",int(sh.cell_value(r-1,1))+tC() # a small add
                                                                   # to preserve order
-                                   
+
                     #print "#",int(sh.cell_value(r-1,1)) #test
-                  
+
           else:
               if c==1 and sh.cell_value(r,0)=="#":
                   print >>f, int(current)+tC(), # a small add
@@ -71,12 +71,12 @@ def out_table(sh, book,f,rec): #!!!!!!!!!!
     return rec # measure of recursion, for test
 
 
-files=os.listdir("./"+project)
+files=os.listdir(project)
 if "schedule.xls" in files:
 
  # translating
- f=open("./"+project+"/schedule.txt","w")
- book = xlrd.open_workbook("./"+project+"/schedule.xls")
+ f=open(project+"/schedule.txt","w")
+ book = xlrd.open_workbook(project+"/schedule.xls")
  sh = book.sheet_by_index(0)
  if book.sheet_names()[0] != "schedule":
      print "Error, first sheet in schedule.txt has to be named 'schedule'"
@@ -88,7 +88,7 @@ if "schedule.xls" in files:
  # post processing to order blocks, if necessary
  ll=[]
  lx=[]
- f=open("./"+project+"/schedule.txt","r")
+ f=open(project+"/schedule.txt","r")
  for line in f:
      contents=line.split()
      #print contents
@@ -103,7 +103,7 @@ if "schedule.xls" in files:
  ll.append(lx)
 
  #print ll
- 
+
  #print
  f.close()
 
@@ -119,26 +119,26 @@ if "schedule.xls" in files:
              #print ll[i]
              del lll
              lll=ll[i][:]
- 
+
              for k in range(int(i1),i2):
                  lll[0]=k+i1-int(i1)
                  ll.append(lll[:])
                  #print lll
-                 
+
  #print
 
  # managing repetitions (if isinstance(ll[i][1],int) is true)
-    
 
- 
+
+
  # sorting
  ll.sort(cmp=lambda x,y: cmp(x[0], y[0])) # so operating only on the first element print ll
- 
+
  #for i in range(len(ll)):
  #    print ll[i]
  #print
 
- f=open("./"+project+"/schedule.txt","w")
+ f=open(project+"/schedule.txt","w")
  sharp=0
  for i in range(len(ll)):
      ll[i][0]=int(ll[i][0])
@@ -150,8 +150,3 @@ if "schedule.xls" in files:
      for j in range(1,len(ll[i])):
          print >>f, ll[i][j]
  f.close()
- 
-     
-
- 
-

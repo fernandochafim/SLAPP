@@ -35,14 +35,14 @@ class ModelSwarm:
         self.worldYSize= worldYSize
 
         # types of the agents
-        agTypeFile=open("./"+project+"/agTypeFile.txt","r")
+        agTypeFile=open(project+"/agTypeFile.txt","r")
         self.types=agTypeFile.read().split()
         agTypeFile.close()
         #print self.types
 
         # operating sets of the agents
         try:
-            agOperatingSetFile=open("./"+project+"/agOperatingSets.txt","r")
+            agOperatingSetFile=open(project+"/agOperatingSets.txt","r")
             self.operatingSets=agOperatingSetFile.read().split()
         except:
             print 'Warning: operating sets not found.'
@@ -77,7 +77,7 @@ class ModelSwarm:
         print
 
         # external agents, RELATED TO THE SPECIFIC project
-        files=os.listdir("./"+project)
+        files=os.listdir(project)
 
         for agType in self.types:
             if not agType+".txt" in files: print "No", agType,\
@@ -90,7 +90,7 @@ class ModelSwarm:
 
         for agType in self.types:
          if agType+".txt" in files:
-           f=open("./"+project+"/"+agType+".txt","r")
+           f=open(project+"/"+agType+".txt","r")
            for line in f:
             if line.split() != []:
                num=int(line.split()[0])
@@ -107,7 +107,7 @@ class ModelSwarm:
 
         for opSet in self.operatingSets:
          if opSet+".txt" in files:
-           f=open("./"+project+"/"+opSet+".txt","r")
+           f=open(project+"/"+opSet+".txt","r")
            for line in f:
                if line.split() != []:
                 num=int(line.split()[0])
@@ -132,7 +132,7 @@ class ModelSwarm:
     # actions
     def buildActions(self):
 
-        modelActions=open("./"+project+"/modelActions.txt")
+        modelActions=open(project+"/modelActions.txt")
         mList=modelActions.read().split()
         modelActions.close()
 
@@ -293,7 +293,7 @@ class ModelSwarm:
                 if subStep == "read_script":
                         found=True
                         if self.ff=="":
-                            try: self.ff=open("./"+project+"/schedule.txt","r")
+                            try: self.ff=open(project+"/schedule.txt","r")
                             except: pass
                         self.actionGroup100.do(self,cycle)
                     # self here is the model env.

@@ -44,7 +44,7 @@ class ObserverSwarm:
         print "#### Project", project,"starting."
         print
 
-        observerActions=open("./"+project+"/observerActions.txt")
+        observerActions=open(project+"/observerActions.txt")
         self.actionList=observerActions.read().split()
         #print self.actionList
         observerActions.close()

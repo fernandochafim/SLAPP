@@ -24,10 +24,19 @@
 (2015 04 24)
 
 0.93 Added the project 'debug' to check debug capabilities. Have a look to the
-     file debug.txt in the folder 'debug' of folder
-     '6 objectSwarmObserverAgents_AESOP_turtleLib_NetworkX'
+file debug.txt in the folder 'debug' of folder '6 objectSwarmObserverAgents_AESOP_turtleLib_NetworkX'
 
-     Modified a few error message of ModelSwarm.py if the required method does not
-     exist
+Modified a few error message of ModelSwarm.py if the required method does not exist
 
-     Improved the Tools.py output in case of error on a method
+Improved the Tools.py output in case of error on a method
+
+(2015 06 07)
+
+0.94 'project' is by default both the name of the application and of the subfolder
+that contains its code; the subfolder is supposed to be placed within the
+SLAPP tree
+
+With this version, the folder can be placed outside the SLAPP tree
+if we place a file project.txt in the folder
+"6 objectSwarmObserverAgents_AESOP_turtleLib_NetworkX"
+the file has to contain the path and the name of the folder of the project
