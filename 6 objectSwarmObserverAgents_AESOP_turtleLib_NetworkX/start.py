@@ -31,7 +31,7 @@ if "project.txt" in names:
     if confirm == "y" or confirm == "Y" or confirm == "": found=True
     currentProject.close()
 
-if confirm == "y":
+if confirm == "y" or confirm == "Y" or confirm == "":
     project = pathAndProject
 else:
     project = raw_input("Project name? ")
