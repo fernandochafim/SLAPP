@@ -221,7 +221,7 @@ class Agent():
                         toBeCloned.xPos+modPosition(),
                         toBeCloned.yPos+modPosition(),
                         agType=toBeCloned.agType,
-                        sector=toBeCloned.sector,modelAddress=self.modelAddress)
+                        sector=toBeCloned.sector)
         self.agentList.append(anAgent)
         if common.verbose: print "Factory", self.number, "has created factory #",\
                                   anAgent.number,"in sector",anAgent.sector
