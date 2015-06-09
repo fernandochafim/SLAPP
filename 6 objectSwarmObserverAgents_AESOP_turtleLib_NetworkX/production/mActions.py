@@ -21,21 +21,21 @@ def do1(address):
 def createTheAgent(self,line,num,leftX,rightX,bottomY,topY,agType):
                 #explicitly pass self, here we use a function
 
-                # recipes 
-                if len(line.split())==1:                 
-                 anAgent = Agent(num, self.worldStateList[0], agType=agType,\
-                                 modelAddress=self)
+                # recipes
+                if len(line.split())==1:
+                 anAgent = Agent(num, self.worldStateList[0], agType=agType)
                  self.agentList.append(anAgent)
+                 anAgent.setAgentList(self.agentList)
 
-                # factories 
-                elif len(line.split())==4:                 
+                # factories
+                elif len(line.split())==4:
                  anAgent = Agent(num, self.worldStateList[0],
                                  int(line.split()[1]),
                                  int(line.split()[2]),    agType=agType,
-                                 sector=int(line.split()[3]),\
-                                 modelAddress=self)
-                 
+                                 sector=int(line.split()[3]))
+
                  self.agentList.append(anAgent)
+                 anAgent.setAgentList(self.agentList)
 
                 else:
                  print "Error in file "+agType+".txt"
@@ -69,9 +69,9 @@ def addAFactory(address):
         address.agentList.append(anAgent)
         if common.verbose: print "Created factory #",anAgent.number,\
                                  "in sector",anAgent.sector
-        
+
 def removeAFactory(address):
-    
+
     if random.random() < 0.2: # with a given probability, removesone of the factories
         factoryTmpList=[]
 
@@ -103,4 +103,4 @@ def otherSubSteps(subStep, address):
               removeAFactory(address)
               return True
 
-            else: return False    
+            else: return False

@@ -41,3 +41,7 @@ if we place a file project.txt in the folder
 "6 objectSwarmObserverAgents_AESOP_turtleLib_NetworkX"
 
 The file has to contain the path and the name of the folder of the project
+
+(2015 06 10)
+
+0.95 simplified the reference to agentList in Agent.py in production project

@@ -6,13 +6,12 @@ import commonVar as common
 class Agent():
     def __init__(self, number,myWorldState,
                  xPos=0, yPos=0, lX =-20,rX=19, bY=-20,tY=19, agType="",
-                 sector=0,modelAddress=0):
+                 sector=0):
 
         # the environment
 
         self.agOperatingSets=[]
         self.number = number
-        self.modelAddress=modelAddress
 
         if agType == 'recipes':
             self.content=[]
@@ -223,7 +222,7 @@ class Agent():
                         toBeCloned.yPos+modPosition(),
                         agType=toBeCloned.agType,
                         sector=toBeCloned.sector,modelAddress=self.modelAddress)
-        self.modelAddress.agentList.append(anAgent)
+        self.agentList.append(anAgent)
         if common.verbose: print "Factory", self.number, "has created factory #",\
                                   anAgent.number,"in sector",anAgent.sector
 
@@ -234,12 +233,12 @@ class Agent():
         toBeRemoved=self
         if common.verbose: print "Factory #",toBeRemoved.number,\
                                  "removed itself from sector",toBeRemoved.sector
-        self.modelAddress.agentList.remove(toBeRemoved)
+        self.agentList.remove(toBeRemoved)
 
         #print "removeItself verification of surviving agents"
-        #for i in range(len(self.modelAddress.agentList)):
-        #    if self.modelAddress.agentList[i].agType=="factories":
-        #          print self.modelAddress.agentList[i].number,
+        #for i in range(len(self.agentList)):
+        #    if self.agentList[i].agType=="factories":
+        #          print self.agentList[i].number,
 
         common.orderedListOfNodes.remove(toBeRemoved)
         #print "\nremoveItself node removed in graph", toBeRemoved, \
@@ -261,8 +260,8 @@ class Agent():
         # remove factoryInWhichRecipeIs from all the recipes, also
         # that having just left this factory and waiting for
         # searchForSector order
-        if self.modelAddress.agentList != []:
-            for anAg in self.modelAddress.agentList:
+        if self.agentList != []:
+            for anAg in self.agentList:
                 if anAg.agType=="recipes" and \
                    anAg.factoryInWhichRecipeIs==self:
                        anAg.factoryInWhichRecipeIs=None
