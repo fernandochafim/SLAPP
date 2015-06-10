@@ -1,5 +1,6 @@
 #Agent.py
 from Tools import *
+from agTools import *
 from turtle import *
 
 register_shape("school/pupilBlackF.gif")
@@ -15,7 +16,7 @@ register_shape("school/pupilSpecialM.gif")
 
 register_shape("desk",((5,-15),(15,-15),(15,15),(5,15)))
 
-class Agent(Turtle):
+class Agent(Turtle, superAgent):
     def __init__(self, number, myWorldState,
                  xPos, yPos, lX =-20,rX=19, bY=-20, tY=19, agType=""):
         Turtle.__init__(self)
@@ -24,7 +25,7 @@ class Agent(Turtle):
         #    bY (bottom lim. on Y axis),
         #    tY (top lim. on y axis),
         # are defined in ModelSwarm.py
-        
+
         # the environment
         self.agOperatingSets=[]
         self.number = number
@@ -72,47 +73,19 @@ class Agent(Turtle):
          if color=="red"    : self.shape("school/pupilRedM.gif")
          if color=="yellow" : self.shape("school/pupilYellowM.gif")
          if color=="violet" : self.shape("school/pupilSpecialM.gif")
-        
+
         if color=="brown"  : self.shape("desk")
 
-    # add an operating  set
-    def setAnOperatingSet(self,aSet):
-        self.agOperatingSets.append(aSet)
-
-    # create the list of all the sets (with the original one too)
-    # in which we can find the agent
-    def setContainers(self):
-        self.containers=self.getOperatingSetList()+[self.getAgentType(),\
-                                                    "all"]
-
-    # set the agentList here
-    def setAgentList(self,agentList):
-        self.agentList=agentList
-
-
-    # get operating set list
-    def getOperatingSetList(self):
-        return self.agOperatingSets
-
-    # get operating agent type
-    def getAgentType(self):
-        return self.agType
-
-    # get last executed method
-    def getLastExecutedMethod(self):
-        return self.lastExecutedMethod
-
-    # reset values
+    # reset values (substitures that in agTools.py)
     def setNewCycleValues(self):
         self.deltaAtt=0
         #self.attention=0
         #self.lastExecutedMethod=''
 
-
     # attention (total value until previous step)
     def getAttention(self):
         return self.attention
-        
+
     # attention (with the last step)
     def getAttentionAndCleanStep(self):
         self.attention+=self.tickAttention
@@ -433,7 +406,7 @@ class Agent(Turtle):
 
         self.write("spy, pss pss", font=("Arial", 12)) # turtle action
 
-        
+
 
     # talking closely
     def talkClose(self,**d):
@@ -539,8 +512,8 @@ class Agent(Turtle):
         self.tickAttention = (self.tickAttention*(self.nMethodsAttention-1) \
                              + add)                                         \
                              / self.nMethodsAttention
-    
-    
+
+
         self.write("Tidy", font=("Arial", 12)) # turtle action
 
 
@@ -554,8 +527,8 @@ class Agent(Turtle):
         self.tickAttention = (self.tickAttention*(self.nMethodsAttention-1) \
                              + add)                                         \
                              / self.nMethodsAttention
-    
-    
+
+
         self.write("Untidy", font=("Arial", 12)) # turtle action
 
 
@@ -569,8 +542,8 @@ class Agent(Turtle):
         self.tickAttention = (self.tickAttention*(self.nMethodsAttention-1) \
                              + add)                                         \
                              / self.nMethodsAttention
-    
-    
+
+
         self.write("un-tidy", font=("Arial", 12)) # turtle action
 
     # borrowing
@@ -583,8 +556,8 @@ class Agent(Turtle):
         self.tickAttention = (self.tickAttention*(self.nMethodsAttention-1) \
                              + add)                                         \
                              / self.nMethodsAttention
-    
-    
+
+
         self.write("Borrow", font=("Arial", 12)) # turtle action
 
 
@@ -628,8 +601,8 @@ class Agent(Turtle):
         self.tickAttention = (self.tickAttention*(self.nMethodsAttention-1) \
                              + add)                                         \
                              / self.nMethodsAttention
-    
-    
+
+
         self.write("uff", font=("Arial", 12)) # turtle action
 
     # being scolded
@@ -652,8 +625,8 @@ class Agent(Turtle):
         self.tickAttention = (self.tickAttention*(self.nMethodsAttention-1) \
                              + add)                                         \
                              / self.nMethodsAttention
-    
-    
+
+
         self.write("ronf", font=("Arial", 12)) # turtle action
 
 
@@ -694,7 +667,7 @@ class Agent(Turtle):
         # not relevant for attention
 
         self.write("ihihih", font=("Arial", 14)) # turtle action
-        
+
 
     # helping classmate
     def helpClassmate(self,**d):
@@ -730,7 +703,7 @@ class Agent(Turtle):
         # not relevant for attention
 
         self.write("spy work", font=("Arial", 14)) # turtle action
-        
+
 
 
     # checking work

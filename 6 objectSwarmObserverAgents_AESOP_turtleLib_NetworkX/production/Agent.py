@@ -1,9 +1,10 @@
 #Agent.py
 from Tools import *
+from agTools import *
 import graphicDisplayGlobalVarAndFunctions as gvf
 import commonVar as common
 
-class Agent():
+class Agent(superAgent):
     def __init__(self, number,myWorldState,
                  xPos=0, yPos=0, lX =-20,rX=19, bY=-20,tY=19, agType="",
                  sector=0):
@@ -59,31 +60,6 @@ class Agent():
     def getGraph(self):
         return common.g
 
-
-    # add an operating set
-    def setAnOperatingSet(self,aSet):
-        self.agOperatingSets.append(aSet)
-
-    # create the list of all the sets (with the original one too)
-    # in which we can find the agent
-    def setContainers(self):
-        self.containers=self.getOperatingSetList()+[self.getAgentType(),\
-                                                    "all"]
-    # set the agentList here
-    def setAgentList(self,agentList):
-        self.agentList=agentList
-
-    # get operating set list
-    def getOperatingSetList(self):
-        return self.agOperatingSets
-
-    # reset values
-    def setNewCycleValues(self):
-        pass # here is only reported for future uses
-
-    # get operating agent type
-    def getAgentType(self):
-        return self.agType
 
     # ",**d" in the parameter lists of the methods is a place holder
     # in case we use, calling the method, a dictionary as last par

@@ -1,8 +1,9 @@
 #Agent.py
 from Tools import *
+from agTools import *
 import commonVar as common
 
-class Agent:
+class Agent(superAgent):
     def __init__(self, number,myWorldState,
                  xPos, yPos, lX =-20,rX=19, bY=-20,tY=19, agType=""):
         # the environment
@@ -20,17 +21,6 @@ class Agent:
         print "agent", self.agType, "#", self.number, \
      	      "has been created at", self.xPos, ",", self.yPos
 
-    # add an operating set
-    def setAnOperatingSet(self,aSet):
-        self.agOperatingSets.append(aSet)
-
-    # get operating set list
-    def getOperatingSetList(self):
-        return self.agOperatingSets
-
-    # reset values
-    def setNewCycleValues(self):
-        pass # here is only reported for future uses
 
     # ",**d" in the parameter lists of the methods is a place holder
     # in case we use, calling the method, a dictionary as last par
@@ -87,21 +77,6 @@ class Agent:
         print self.agType, "agent # ", self.number, " is at X = ", \
                self.xPos, " Y = ", self.yPos
 
-    # methods for Tk graphic applications
-    def getXPos(self):
-        return self.xPos
-
-    def getYPos(self):
-        return self.yPos
-
-    def setGraphicItem(self, grI):
-        self.graphicItem=grI
-
-    def getGraphicItem(self):
-        return self.graphicItem
-
-    def getAgentType(self):
-        return self.agType
 
 # returns -1, 0, 1  with equal probability
 def randomMove(jump):
