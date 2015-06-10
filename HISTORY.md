@@ -45,3 +45,5 @@ The file has to contain the path and the name of the folder of the project
 (2015 06 10)
 
 0.95 simplified the reference to agentList in Agent.py in production project
+
+simplified Agent.py in projects using a superAgent class as a container of unspecific methods
