@@ -9,7 +9,7 @@ Here you have SLAPP v.0.95 (in the [SLAPP repository](http://eco83.econ.unito.it
 
 A reference manual is coming (expected with version 1.0, in June 2015).
 
-Five chapters of a forthcoming [book](http://www.palgrave.com/page/detail/agentbased-models-of-the-economy-/?K=9781137339805) will be related to SLAPP.
+Five chapters of a new [book](http://www.palgrave.com/page/detail/agentbased-models-of-the-economy-/?K=9781137339805) are related to SLAPP.
 
 ---
 SLAPP logo: credits to [Steve Rogers](https://www.linkedin.com/in/shrogers).
