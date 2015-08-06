@@ -20,4 +20,4 @@ http://eco83.econ.unito.it/terna/swarm/swarmapps-objc-2.2-3.tar.gz
 (Addresses verified on January 2015)
 
 
-Pietro Terna, starting October 2008, this version January 2015
+Pietro Terna, starting October 2008, this version August 2015
