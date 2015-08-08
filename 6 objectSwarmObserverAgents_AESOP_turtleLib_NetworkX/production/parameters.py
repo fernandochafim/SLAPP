@@ -10,8 +10,15 @@ def loadParameters(self):
   print "NetworkX version %s running" % nx.__version__
   print "Matplotlib version %s running\n" % mplt.__version__
 
-  nxv=nx.__version__
-  if nxv<'1.9.1':
+  nxv=nx.__version__.split('.')
+  vOK=False
+  if int(nxv[0])>1: vOK=True
+  elif len(nxv)>=2:
+      if int(nxv[0])==1 and int(nxv[1])>9: vOK=True
+  elif len(nxv)>=3:
+      if int(nxv[0])==1 and int(nxv[1])==9 and int(nxv[2])>=1: vOK=True
+
+  if not vOK:
 		print "NetworkX 1.9.1 or greater required"
 		os.sys.exit(1)
 

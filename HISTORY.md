@@ -47,3 +47,7 @@ The file has to contain the path and the name of the folder of the project
 0.95 simplified the reference to agentList in Agent.py in production project
 
 simplified Agent.py in projects using a superAgent class as a container of unspecific methods
+
+(2015 08 08)
+
+0.951 fixes a bug in the version control for the library NetworkX, in production/parameters.py
