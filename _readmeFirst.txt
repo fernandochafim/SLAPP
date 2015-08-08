@@ -17,7 +17,7 @@ or at
 http://nongnu.askapache.com/swarm/apps/objc/sdg/swarmapps-objc-2.2-3.tar.gz
 or at
 http://eco83.econ.unito.it/terna/swarm/swarmapps-objc-2.2-3.tar.gz
-(Addresses verified on January 2015)
+(Addresses verified on August 2015)
 
 
 Pietro Terna, starting October 2008, this version August 2015
