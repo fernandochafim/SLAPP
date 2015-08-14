@@ -13,9 +13,9 @@ def loadParameters(self):
   nxv=nx.__version__.split('.')
   vOK=False
   if int(nxv[0])>1: vOK=True
-  elif len(nxv)>=2:
+  if len(nxv)>=2:
       if int(nxv[0])==1 and int(nxv[1])>9: vOK=True
-  elif len(nxv)>=3:
+  if len(nxv)>=3:
       if int(nxv[0])==1 and int(nxv[1])==9 and int(nxv[2])>=1: vOK=True
 
   if not vOK:

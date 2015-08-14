@@ -51,3 +51,7 @@ simplified Agent.py in projects using a superAgent class as a container of unspe
 (2015 08 08)
 
 0.951 fixes a bug in the version control for the library NetworkX, in production/parameters.py
+
+(2015 08 08)
+
+0.952 fixes a residual bug in the version control for the library NetworkX, in production/parameters.py
