@@ -20,7 +20,7 @@ How to start: a quick introduction
 ====
 To study the tutorial, read the content of the file "SLAPP tutorial.txt"
 
-To start running the agent-based shell, read the content of the file "SLAPP shell.txt" and install the required libraries; then open a terminal, go into the SLAPP-master folder, then in the folder "6 objectSwarmObserverAgents_AESOP_turtleLib_NetworkX" (simply cd 6 and then tab) and
+To start running the agent-based shell, read the content of the file "SLAPP shell.txt" and install the required libraries; then open a terminal, go into the SLAPP main folder, then in the folder "6 objectSwarmObserverAgents_AESOP_turtleLib_NetworkX" (simply cd 6 and then tab) and
 
 1 - launch the application "basic" as in the following window:
 

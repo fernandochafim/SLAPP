@@ -9,22 +9,22 @@ Python = www.python.org
 This tutorial introduces the user through the development of a SLAPP
 model that makes use of a lot of the functionalities of Swarm.
 
-The model is related to the movement of a bug, randomly walking in a 2D space.
+The model refers to the movement of a bug, randomly walking in a 2D space.
 
 We start introducing a very simple, essentially plain program, about
-a bug taking a random walk. Through a progression of models,
+that bug taking a random walk. Through a progression of models,
 we introduce basic object-oriented and Swarm style programming.
 
 Although this is a quite simple exercise, it shows how
 easy it is to compose fairly complex software from simple
 building blocks.
 
-In this folder we have several subfolders, each with a complete
+In this folder, we have several subfolders, each with a complete
 application and a README file that helps you to walk through the code.
 
 You should start with the "1 plainProgrammingBug" folder, and then
-proceed in the following order (the start files can be found in the folders with
-the same number):
+proceed in the following order (the start files have a number correspondent
+to that of their folder):
 
 1 plainProgrammingBug
 2 basicObjectProgrammingBug
