@@ -141,3 +141,10 @@ def getLocalCode():
 def setLocalCode(code):
       global localCode
       localCode=code
+
+def checkRunningIn():
+    try:
+        __IPYTHON__
+        return True
+    except NameError:
+        return False

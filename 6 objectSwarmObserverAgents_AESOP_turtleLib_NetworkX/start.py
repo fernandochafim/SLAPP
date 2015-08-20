@@ -9,7 +9,7 @@
 # project.txt in the folder "6 objectSwarmObserverAgents_AESOP_turtleLib_NetworkX"
 # the file has to contain the path and the name of the folder of the project
 
-print "SLAPP 0.952"
+print "SLAPP 0.953"
 import os
 confirm="n"
 found=False
@@ -51,6 +51,10 @@ if found:
  from Tools import *
  from ObserverSwarm import *
  import commonVar as common
+
+ common.IPython=checkRunningIn()
+ if common.IPython: print "running in IPython"
+ else:              print "running in Python"
 
  common.debug=False # if debug il True a large part of the try/except
                     # structures will be bypassed, so the errors will
