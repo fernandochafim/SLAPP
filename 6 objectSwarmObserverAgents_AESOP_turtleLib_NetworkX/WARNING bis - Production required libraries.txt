@@ -1,0 +1,7 @@
+To run the ‘production’ application it is necessary to install
+
+Matplotlib which is at http://matplotlib.org
+
+and
+
+NetworkX, which is at http://networkx.github.io
