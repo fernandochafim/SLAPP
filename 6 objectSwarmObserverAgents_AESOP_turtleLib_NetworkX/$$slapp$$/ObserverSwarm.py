@@ -111,6 +111,10 @@ class ObserverSwarm:
                     # not added automatically
                     # being do a variable
 
+                if subStep == "visualizeNet":
+                    found=True
+                    self.actionGroup1b.do(self)
+
                 if subStep == "ask_all":
                     found=True
                     self.actionGroup2a.do(self, common.cycle)
