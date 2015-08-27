@@ -142,16 +142,17 @@ class ModelSwarm:
         # look at basic case schedule, where "move" represents an example of mandatory
         # action (in our case generating also a dynamic "jump" action) and
         # "read_script" represents an external source of actions
-        # or, without reading the external schedule (anyway, in the case
+
+        # without reading an external schedule (anyway, in the case
         # above, if you do not put a schedule.txt or a schedule.xls file in
-        # program folder, the "read_script" step simply has no effect)
+        # program folder), the "read_script" step simply has no effect)
 
         # basic actionGroup
 
-        self.actionGroup0 = ActionGroup ()
+        self.actionGroup0 = ActionGroup ("reset")
         self.actionGroup0.do = do0 # do is a variable linking a method
 
-        self.actionGroup1 = ActionGroup ()
+        self.actionGroup1 = ActionGroup ("move")
         self.actionGroup1.do = do1 # do is a variable linking a method
 
         # to create other actionGroup ..,
