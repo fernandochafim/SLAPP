@@ -26,6 +26,7 @@ class superAgent():
     # reset values
     def setNewCycleValues(self):
         pass # here is only reported for future uses
+             # or to be redefined in Agent.py of a specifi project
 
     # get operating agent type
     def getAgentType(self):
