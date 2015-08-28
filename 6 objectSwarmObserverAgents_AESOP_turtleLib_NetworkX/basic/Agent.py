@@ -45,7 +45,8 @@ class Agent(superAgent):
     def randomMovement(self,**k):
         if random.random()<=self.myWorldState.getGeneralMovingProb():
             print "agent %s # %d moving" % (self.agType,self.number)
-            self.jump=k["jump"]
+            self.jump=1
+            if k.has_key("jump"): self.jump=k["jump"]
             dx=randomMove(self.jump)
             self.xPos +=dx
             dy=randomMove(self.jump)
