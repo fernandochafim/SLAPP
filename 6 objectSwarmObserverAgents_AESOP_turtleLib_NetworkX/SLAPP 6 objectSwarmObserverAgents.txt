@@ -31,20 +31,20 @@ At each step of the Observe we have to assure that a step of the Model is execut
 
 In this example the time schedule is:
 
-Observer ["modelStep", "talk all", "clock"], ["modelStep", "talk one", "clock"], ["modelStep", "talk one", "clock"] 
+Observer ["modelStep", "talk all", "clock"], ["modelStep", "talk one", "clock"], ["modelStep", "talk one", "clock"]
 
 or
 
-Observer ["modelStep"], ["talk all"], ["clock"], ["modelStep"], ["talk one"], ["clock"], ["modelStep"], ["talk one"], ["clock"] 
+Observer ["modelStep"], ["talk all"], ["clock"], ["modelStep"], ["talk one"], ["clock"], ["modelStep"], ["talk one"], ["clock"]
 
 where "modelStep" is a step or a subStep managing the model and "clock" is a step or a subStep managing the time
 
 in our case, "modelStep" starts, in each cycle, the seguence
-["move", "read_schedule"]
-which il the same of 
-["move"], ["read_schedule"]
+["move", "read_script"]
+which il the same of
+["move"], ["read_script"]
 
-"read_schedule" manages the external schedule, if a schedule.txt or schedule.xls file exists in the same folder; "read_schedule" can be omitted if no external schedule is used
+"read_srcipt" manages the external schedule, if a schedule.txt or schedule.xls file exists in the same folder; "read_script" can be omitted if no external schedule is used
 
 
 Another  important novelty is the capability of the agents of modifying on the fly the contents of the actionGroups, generating local code to be executed when the actionGroup is activated.
@@ -52,4 +52,4 @@ Another  important novelty is the capability of the agents of modifying on the f
 Look at the "move" action in ModelSwarm.py and at the related instructions in the method randomMovement of the Agent.py file.
 
 
-Finally have a look to a_note_on_AESOP.txt temporary report.
+Finally have a look to a_note_on_AESOP.txt report.
