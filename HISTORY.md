@@ -64,3 +64,7 @@ simplified Agent.py in projects using a superAgent class as a container of unspe
 
 0.96  clarified scheduling in Observer.py about 'visualizeNet'; corrected also
       oActions.py in production project; no changes in the results
+
+(2015 08 31)
+
+1.0   Having now a Handbook, this is version 1.0  
