@@ -68,3 +68,7 @@ simplified Agent.py in projects using a superAgent class as a container of unspe
 (2015 08 31)
 
 1.0   Having now a Handbook, this is version 1.0  
+
+(2015 09 02)
+
+1.01  Reorganized start.py in the folder '6 objectSwarmObserverAgents_AESOP_turtleLib_NetworkX' considering running SLAPP also in IPython
