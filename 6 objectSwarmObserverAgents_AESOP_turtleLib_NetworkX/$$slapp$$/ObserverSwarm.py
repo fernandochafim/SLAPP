@@ -6,7 +6,8 @@ from ActionGroup import *
 from oActions import *
 from Pen import *
 import penPosition
-import graphicDisplayGlobalVarAndFunctions as gvf
+try: import graphicDisplayGlobalVarAndFunctions as gvf
+except: pass
 from parameters import *
 import commonVar as common
 import os
@@ -131,9 +132,19 @@ class ObserverSwarm:
                     found=True
                     self.actionGroup3.do(self)
                     raw_input("enter to conclude")
-                    # look at graphicDisplayGlobalVarAndFunctions.py in the
-                    # folder of the project
-                    gvf.closeNetworkXdisplay()
+                    # look at graphicDisplayGlobalVarAndFunctions.py (if it
+                    # exists) in the folder of the project
+                    try: gvf.closeNetworkXdisplay()
+                    except: pass
+
+                    # run what left to be executed by the 'end' substep (if any)
+                    # in oActions.py
+
+                    try:
+                        common.toBeExecuted
+                        tmp=common.toBeExecuted
+                    except: tmp=""
+                    exec(tmp)
 
                 if not found: print "Warning: step %s not found in Observer" % subStep
 

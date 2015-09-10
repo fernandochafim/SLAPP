@@ -13,9 +13,13 @@ print "SLAPP 1.01"
 import os
 confirm="n"
 found=False
-names=os.listdir("./")
-if "project.txt" in names:
-    currentProject=open ("project.txt","r")
+names1=os.listdir("./")
+names2=os.listdir("../")
+name=False
+if "project.txt" in names1: name = "project.txt"
+if "project.txt" in names2: name = "../project.txt"
+if name:
+    currentProject=open (name,"r")
     pathAndProject=currentProject.readline()
     if pathAndProject[-1]=="\n" or pathAndProject[-1]=="\r":
         pathAndProject=pathAndProject[0:-1]
@@ -49,14 +53,14 @@ if found:
  else:             sys.path.append(pathAndProject)
 
  import commonVar as common
- from Tools import * 
+ from Tools import *
 
  common.IPython=checkRunningIn()
  if common.IPython: print "running in IPython"
  else:              print "running in Python"
- 
+
  from ObserverSwarm import *
- 
+
 
 
  common.debug=False # if debug il True a large part of the try/except
