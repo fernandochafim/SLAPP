@@ -39,7 +39,7 @@ if confirm == "y" or confirm == "Y" or confirm == "":
     project = pathAndProject
 else:
     project = raw_input("Project name? ")
-    if not project in names: print "Project " + project + " not found"
+    if not project in names1: print "Project " + project + " not found"
     else:
         found=True
         project="./"+project
