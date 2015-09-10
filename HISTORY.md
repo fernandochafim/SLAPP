@@ -72,3 +72,15 @@ simplified Agent.py in projects using a superAgent class as a container of unspe
 (2015 09 02)
 
 1.01  Reorganized start.py in the folder '6 objectSwarmObserverAgents_AESOP_turtleLib_NetworkX' considering running SLAPP also in IPython
+
+(2015 09 10)
+
+1.1   New starting point in the main folder (tunShell.py)
+
+      The file project.txt (look at the Reference Handbook) can be also placed in the
+      main folder
+
+      Better management of 'end' condition for graphical projects
+
+
+ in the folder '6 objectSwarmObserverAgents_AESOP_turtleLib_NetworkX' considering running SLAPP also in IPython
