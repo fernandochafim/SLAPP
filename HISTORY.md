@@ -81,6 +81,3 @@ simplified Agent.py in projects using a superAgent class as a container of unspe
       main folder
 
       Better management of 'end' condition for graphical projects
-
-
- in the folder '6 objectSwarmObserverAgents_AESOP_turtleLib_NetworkX' considering running SLAPP also in IPython
