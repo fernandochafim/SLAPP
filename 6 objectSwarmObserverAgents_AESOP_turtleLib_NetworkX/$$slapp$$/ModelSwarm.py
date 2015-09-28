@@ -324,7 +324,7 @@ class ModelSwarm:
                 try: exec "askEachAgentInCollection(localList,"+task[0]+"."+task[2]+", **d)"
                 except: pass
             else:
-                try: exec "self.worldStateList[0]."+task[1]+"()"
+                try: exec "self.worldStateList[0]."+task[2]+"()"
                 except: pass
 
 
