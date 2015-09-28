@@ -81,3 +81,9 @@ simplified Agent.py in projects using a superAgent class as a container of unspe
       main folder
 
       Better management of 'end' condition for graphical projects
+
+(2015 09 29)
+
+1.11  Allowing a wider use of WorldState. This is only a temporary patch, the interface
+      to WorldState in ModelSwarm.py will be quite soon re-engineered, also having as
+      optional the presence of WorldState.py in the folder of a project.

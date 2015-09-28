@@ -319,10 +319,14 @@ class ModelSwarm:
                 try:  prob = float(task[1]) # does task[1] contains
                                             # a number?
                 except: pass
-            d={}
-            d['generalMovingProb']=prob
-            try: exec "askEachAgentInCollection(localList,"+task[0]+"."+task[2]+", **d)"
-            except: pass
+                d={}
+                d['generalMovingProb']=prob
+                try: exec "askEachAgentInCollection(localList,"+task[0]+"."+task[2]+", **d)"
+                except: pass
+            else:
+                try: exec "self.worldStateList[0]."+task[1]+"()"
+                except: pass
+
 
 
         #if task[0] is 'all' or a type of agent
