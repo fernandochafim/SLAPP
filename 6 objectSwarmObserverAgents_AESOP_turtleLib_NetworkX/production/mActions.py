@@ -67,6 +67,7 @@ def addAFactory(address):
                         agType=toBeCloned.agType,
                         sector=toBeCloned.sector)
         address.agentList.append(anAgent)
+        anAgent.setAgentList(address.agentList)
         if common.verbose: print "Created factory #",anAgent.number,\
                                  "in sector",anAgent.sector
 
