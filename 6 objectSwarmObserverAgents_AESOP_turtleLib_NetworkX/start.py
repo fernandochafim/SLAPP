@@ -9,7 +9,7 @@
 # project.txt in the folder "6 objectSwarmObserverAgents_AESOP_turtleLib_NetworkX"
 # the file has to contain the path and the name of the folder of the project
 
-print "SLAPP 1.11 build 20151202"
+print "SLAPP 1.11 build 20160101"
 import os
 confirm="n"
 found=False
