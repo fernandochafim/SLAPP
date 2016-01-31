@@ -75,12 +75,11 @@ simplified Agent.py in projects using a superAgent class as a container of unspe
 
 (2015 09 10)
 
-1.1   New starting point in the main folder (tunShell.py)
+1.1   New starting point in the main folder (runShell.py)
 
-      The file project.txt (look at the Reference Handbook) can be also placed in the
-      main folder
+The file project.txt (look at the Reference Handbook) can be also placed in the main folder
 
-      Better management of 'end' condition for graphical projects
+Better management of 'end' condition for graphical projects
 
 (2015 09 29)
 
