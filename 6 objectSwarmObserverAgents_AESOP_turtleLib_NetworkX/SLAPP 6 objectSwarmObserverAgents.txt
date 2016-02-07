@@ -44,7 +44,7 @@ in our case, "modelStep" starts, in each cycle, the seguence
 which il the same of
 ["move"], ["read_script"]
 
-"read_srcipt" manages the external schedule, if a schedule.txt or schedule.xls file exists in the same folder; "read_script" can be omitted if no external schedule is used
+"read_script" manages the external schedule, if a schedule.txt or schedule.xls file exists in the same folder; "read_script" can be omitted if no external schedule is used
 
 
 Another  important novelty is the capability of the agents of modifying on the fly the contents of the actionGroups, generating local code to be executed when the actionGroup is activated.
