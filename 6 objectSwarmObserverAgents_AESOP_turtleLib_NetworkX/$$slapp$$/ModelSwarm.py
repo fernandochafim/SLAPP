@@ -90,8 +90,12 @@ class ModelSwarm:
 
         for agType in self.types:
          # extended txt (.txtx)
-         if agTypes+"txtx" in files:
-             print "TROVATO TROVATO TROVATO"
+         if agType+".txtx" in files:
+             dictExe={}
+             dictExe["project"]=project
+             dictExe["fileName"]=agType
+             execfile("./$$slapp$$/convert_txtx_txt.py",dictExe)
+
 
          if agType+".txt" in files:
            f=open(project+"/"+agType+".txt","r")
