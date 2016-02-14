@@ -87,9 +87,9 @@ Better management of 'end' condition for graphical projects
       to WorldState in ModelSwarm.py will be quite soon re-engineered, also having as
       optional the presence of WorldState.py in the folder of a project
 
-(2016 01 31)
+(2016 02 15)
 
 1.2   Introducing the extension .txtx (extended txt) to be used for the definition
       of the files describing the agents
 
-Have a look to the Reference Handbook, section *The agents and their sets*,
+Have a look to the Reference Handbook, section *The agents and their sets*, sub section *Files .txtx in defining the agents*
