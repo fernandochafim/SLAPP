@@ -41,7 +41,7 @@ where "modelStep" is a step or a subStep managing the model and "clock" is a ste
 
 in our case, "modelStep" starts, in each cycle, the seguence
 ["move", "read_script"]
-which il the same of
+which is the same of
 ["move"], ["read_script"]
 
 "read_script" manages the external schedule, if a schedule.txt or schedule.xls file exists in the same folder; "read_script" can be omitted if no external schedule is used
