@@ -58,7 +58,7 @@ simplified Agent.py in projects using a superAgent class as a container of unspe
 
 (2015 08 20)
 
-0.953 adds the capabily of recognizing if running in IPython or in Python
+0.953 adds the capability of recognizing if running in IPython or in Python
 
 (2015 08 26)
 
@@ -75,15 +75,21 @@ simplified Agent.py in projects using a superAgent class as a container of unspe
 
 (2015 09 10)
 
-1.1   New starting point in the main folder (tunShell.py)
+1.1   New starting point in the main folder (runShell.py)
 
-      The file project.txt (look at the Reference Handbook) can be also placed in the
-      main folder
+The file project.txt (look at the Reference Handbook) can be also placed in the main folder
 
-      Better management of 'end' condition for graphical projects
+Better management of 'end' condition for graphical projects
 
 (2015 09 29)
 
 1.11  Allowing a wider use of WorldState. This is only a temporary patch, the interface
       to WorldState in ModelSwarm.py will be quite soon re-engineered, also having as
-      optional the presence of WorldState.py in the folder of a project.
+      optional the presence of WorldState.py in the folder of a project
+
+(2016 01 31)
+
+1.2   Introducing the extension .txtx (extended txt) to be used for the definition
+      of the files describing the agents
+
+Have a look to the Reference Handbook, section *The agents and their sets*,
