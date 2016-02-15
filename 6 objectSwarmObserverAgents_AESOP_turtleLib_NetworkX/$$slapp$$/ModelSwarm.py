@@ -80,6 +80,17 @@ class ModelSwarm:
         files=os.listdir(project)
 
         for agType in self.types:
+          # extended txt (.txtx)
+          if agType+".txtx" in files:
+             dictExe={}
+             dictExe["project"]=project
+             dictExe["fileName"]=agType
+             execfile("./$$slapp$$/convert_txtx_txt.py",dictExe)
+
+        # update for new .txt file created above
+        files=os.listdir(project)
+
+        for agType in self.types:
             if not agType+".txt" in files: print "No", agType,\
                "agents: lacking the specific file", agType+".txt"
 
@@ -89,13 +100,6 @@ class ModelSwarm:
         print
 
         for agType in self.types:
-         # extended txt (.txtx)
-         if agType+".txtx" in files:
-             dictExe={}
-             dictExe["project"]=project
-             dictExe["fileName"]=agType
-             execfile("./$$slapp$$/convert_txtx_txt.py",dictExe)
-
 
          if agType+".txt" in files:
            f=open(project+"/"+agType+".txt","r")
