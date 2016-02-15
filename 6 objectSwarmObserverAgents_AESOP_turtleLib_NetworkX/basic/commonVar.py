@@ -1,3 +1,3 @@
 #commonVar.py
 
-projectVersion = 1.0
+projectVersion = 1.1
