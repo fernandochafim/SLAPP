@@ -63,7 +63,7 @@ simplified Agent.py in projects using a superAgent class as a container of unspe
 (2015 08 26)
 
 0.96  clarified scheduling in Observer.py about 'visualizeNet'; corrected also
-      oActions.py in production project; no changes in the results
+oActions.py in production project; no changes in the results
 
 (2015 08 31)
 
@@ -84,12 +84,18 @@ Better management of 'end' condition for graphical projects
 (2015 09 29)
 
 1.11  Allowing a wider use of WorldState. This is only a temporary patch, the interface
-      to WorldState in ModelSwarm.py will be quite soon re-engineered, also having as
-      optional the presence of WorldState.py in the folder of a project
+to WorldState in ModelSwarm.py will be quite soon re-engineered, also having as
+optional the presence of WorldState.py in the folder of a project
 
 (2016 02 15)
 
 1.2   Introducing the extension .txtx (extended txt) to be used for the definition
-      of the files describing the agents
+of the files describing the agents
 
 Have a look to the Reference Handbook, section *The agents and their sets*, sub section *Files .txtx in defining the agents*
+
+(2016 04 08)
+1.2.1 Modifications facing v. 1.5.1 of matplotlib, mainly relevant with IPython and
+%matplolib magics
+
+new folder *matplotlib_aQuestForAFewGraphicCapabilities* to explore matplotlib in Python & IPython environments

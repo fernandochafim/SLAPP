@@ -80,8 +80,9 @@ def closeNetworkXdisplay():
     plt.close()
 
 def openClearNetworkXdisplay():
-    plt.ion()
+    #plt.ion() # per %mat inline
     #plt.clf()
+    pass
 
 def clearNetworkXdisplay():
     plt.clf()
@@ -139,8 +140,8 @@ def drawGraph():
          labels = common.g_labels)
     nx.draw_networkx_edge_labels(common.g,pos,edge_labels=common.g_edge_labels,\
                                  font_size=9)
-    plt.draw()
-    #plt.show()
+    #plt.draw()
+    plt.show() #per %Matplotlib inline
 
     #print agentGraph.nodes(data=True)
     #print agentGraph.edges(data=True)
