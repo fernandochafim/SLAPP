@@ -10,7 +10,7 @@
 # the file has to contain the path and the name of the folder of the project
 
 
-print "SLAPP 1.2.1 build 20160408"
+print "SLAPP 1.2.1 build 20160409"
 import os
 
 confirm="n"
@@ -47,7 +47,6 @@ else:
         project="./"+project
 
 
-
 if found:
  import sys
  sys.path.append("./$$slapp$$")
@@ -56,6 +55,10 @@ if found:
 
  import commonVar as common
  from Tools import *
+ import graphicControl as gc
+
+ gc.graphicControl()
+ #print common.graphicStatus
 
  common.IPython=checkRunningIn()
  if common.IPython: print "running in IPython"
