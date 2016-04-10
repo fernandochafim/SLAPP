@@ -63,7 +63,7 @@ def graphicControl():
 
   # running in IPython without any magic matplotlib already set
   else:
-      print "SLAPP running without any matplotlib magic command"
+      print "SLAPP starting without any matplotlib magic command"
 
       get_ipython().magic("%matplotlib inline")
 
