@@ -95,7 +95,7 @@ of the files describing the agents
 Have a look to the Reference Handbook, section *The agents and their sets*, sub section *Files .txtx in defining the agents*
 
 (2016 04 08)
-1.2.1 Modifications facing v. 1.5.1 of matplotlib, mainly relevant with IPython and
+1.21 Modifications facing v. 1.5.1 of matplotlib, mainly relevant with IPython and
 %matplolib magics
 
 new folder *matplotlib_aQuestForAFewGraphicCapabilities* to explore matplotlib in Python & IPython environments
