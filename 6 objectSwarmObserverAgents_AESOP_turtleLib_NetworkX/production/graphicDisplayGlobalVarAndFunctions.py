@@ -82,7 +82,6 @@ def closeNetworkXdisplay():
 def openClearNetworkXdisplay():
     if common.graphicStatus == "PythonViaTerminal": plt.ion()
     #plt.clf()
-    pass
 
 def clearNetworkXdisplay():
     plt.clf()
