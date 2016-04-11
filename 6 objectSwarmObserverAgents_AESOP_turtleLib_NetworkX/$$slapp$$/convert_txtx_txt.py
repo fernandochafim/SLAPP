@@ -80,10 +80,10 @@ for line in fIn:
         for i in range(1,len(sline)):
         #check for the presence of a formula
             if sline[i].find("=") != -1:
-                    print "%s " % executeFormula(fIn,fOu,nrow,n,sline[i]),
+                    #print "%s " % executeFormula(fIn,fOu,nrow,n,sline[i]),
                     print >> fOu, "%s " % executeFormula(fIn,fOu,nrow,n,sline[i]),
             else:
-                    print "%s " % sline[i],
+                    #print "%s " % sline[i],
                     print >> fOu, "%s " % sline[i],
         #print
         print >> fOu
