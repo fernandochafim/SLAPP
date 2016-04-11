@@ -1,5 +1,5 @@
-With the current version of Matplotlib (1.3.4), if SLAPP runs in a notebook,
-via IPython, we have an annoying warning message when producing graphics.
+With the current version of Matplotlib (1.3.4), we have an annoying warning
+message when producing graphics.
 
 To avoid it substitute the text.py file in your python folder chain with that
 patched that you find in the main folder of the SLAPP GitHub
