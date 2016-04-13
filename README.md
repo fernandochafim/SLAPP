@@ -57,3 +57,10 @@ The effect is (plain text output):
 and as graphical output:
 
 <img src="./-pictures/t8.png" />
+
+Above you have different launching ways, using runShell.py (preferred) or
+start.py in folder "6 objectSwarmObserverAgents_AESOP_turtleLib_NetworkX"
+(also possible)
+
+A good starting point about *running* SLAPP is the Reference Handbook,
+section *How to run SLAPP*

@@ -95,16 +95,19 @@ of the files describing the agents
 Have a look to the Reference Handbook, section *The agents and their sets*, sub section *Files .txtx in defining the agents*
 
 (2016 04 08)
-1.21 Modifications facing v. 1.5.1 of matplotlib, mainly relevant with IPython and
-%matplolib magics
+1.21 Modifications facing v. 1.5.1 of matplotlib
 
-New folder *matplotlib_aQuestForAFewGraphicCapabilities* to explore matplotlib in Python & IPython environments
+New independent folder *matplotlib_aQuestForAFewGraphicCapabilities* to explore matplotlib in Python & IPython environments
 
-From now on, SLAPP runs via a terminal or in IPython (jupyter notebook),
-using runShell.py or iRunShell.ipynb (look at the Reference Handbook)
+From now on, SLAPP runs only via a terminal or in IPython (jupyter notebook),
+using runShell.py or iRunShell.ipynb (look at the Reference Handbook, section *How to run SLAPP*)
+
+In IPython, the magic command '%matplotlib inline' is internally added if missing;
+if '%matplotlib' is the explicit choice, the 'inline' option is internally stated
 
 In the main folder now we have runShell.py to start the shell in Python and
-iRunShell.ipynb to start it in IPython (using "jupyter notebook")
+iRunShell.ipynb to start it in IPython (using "jupyter notebook"); have a look
+to the Reference Handbook, again section *How to run SLAPP*
 
 The patch for matplotlib 1.3.4 is no more necessary and we have eliminated it;
 you can anyway retrieve it in the branch v.1.2 in the github repository of SLAPP
