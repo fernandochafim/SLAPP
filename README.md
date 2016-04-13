@@ -1,4 +1,4 @@
-SLAPP <img src="./_pictures/slapp-logo.png" height="90" />
+SLAPP <img src="./-pictures/slapp-logo.png" height="90" />
 =====
 
 
@@ -7,7 +7,7 @@ Swarm-Like Agent Protocol in Python
 
 Here you have SLAPP v.1.2.1 (in the [SLAPP repository](http://eco83.econ.unito.it/terna/slapp_dep) you have related material and old versions).
 
-We have now a [**Reference Handbook**](https://github.com/terna/SLAPP/blob/v.1.2.1/SLAPP_Reference_Handbook.pdf) (it is still a draft and has to be improved).
+We have now a [**Reference Handbook**](https://github.com/terna/SLAPP/blob/v.1.21/SLAPP_Reference_Handbook.pdf) (it is still a draft and has to be improved).
 
 Five chapters of a new [book](http://www.palgrave.com/page/detail/agentbased-models-of-the-economy-/?K=9781137339805) are related to SLAPP.
 
@@ -24,36 +24,36 @@ To start running the agent-based shell, read the content of the file "SLAPP shel
 
 1 - launch the application "basic" as in the following window:
 
-<img src="./_pictures/t1.png" />
+<img src="./-pictures/t1.png" />
 
 The effect is (plain text output only):
 
-<img src="./_pictures/t2.png" />
+<img src="./-pictures/t2.png" />
 
 or
 
 2 - launch the application "school" as in the following window:
 
-<img src="./_pictures/t3.png" />
+<img src="./-pictures/t3.png" />
 
 The effect is (plain text output):
 
-<img src="./_pictures/t4.png" />
+<img src="./-pictures/t4.png" />
 
 and as graphical output:
 
-<img src="./_pictures/t5.png" />
+<img src="./-pictures/t5.png" />
 
 or
 
 3 - launch the application "production" as in the following window:
 
-<img src="./_pictures/t6.png" />
+<img src="./-pictures/t6.png" />
 
 The effect is (plain text output):
 
-<img src="./_pictures/t7.png" />
+<img src="./-pictures/t7.png" />
 
 and as graphical output:
 
-<img src="./_pictures/t8.png" />
+<img src="./-pictures/t8.png" />

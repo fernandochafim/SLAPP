@@ -71,7 +71,7 @@ oActions.py in production project; no changes in the results
 
 (2015 09 02)
 
-1.01  Reorganized start.py in the folder '6 objectSwarmObserverAgents_AESOP_turtleLib_NetworkX' considering running SLAPP also in IPython
+1.01  Reorganized start.py in the folder '6 objectSwarmObserverAgents_AESOP_turtleLib_NetworkX' considering the possibility running SLAPP also in IPython
 
 (2015 09 10)
 
@@ -98,4 +98,19 @@ Have a look to the Reference Handbook, section *The agents and their sets*, sub 
 1.21 Modifications facing v. 1.5.1 of matplotlib, mainly relevant with IPython and
 %matplolib magics
 
-new folder *matplotlib_aQuestForAFewGraphicCapabilities* to explore matplotlib in Python & IPython environments
+New folder *matplotlib_aQuestForAFewGraphicCapabilities* to explore matplotlib in Python & IPython environments
+
+From now on, SLAPP runs via a terminal or in IPython (jupyter notebook),
+using runShell.py or iRunShell.ipynb (look at the Reference Handbook)
+
+In the main folder now we have runShell.py to start the shell in Python and
+iRunShell.ipynb to start it in IPython (using "jupyter notebook")
+
+The patch for matplotlib 1.3.4 is no more necessary and we have eliminated it;
+you can anyway retrieve it in the branch v.1.2 in the github repository of SLAPP
+
+matplotlib produces an annoying warning about creating fonts; to avoid it, several
+hints online suggest to delete in ~.cache the folder fontconfig or matplotlib
+Instead, in MacOS go to the folder .matplolib in your home and delete the file
+fontList.cache
+The annoying warning will appear only one more time
