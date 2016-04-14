@@ -95,6 +95,7 @@ of the files describing the agents
 Have a look to the Reference Handbook, section *The agents and their sets*, sub section *Files .txtx in defining the agents*
 
 (2016 04 08)
+
 1.21 Modifications facing v. 1.5.1 of matplotlib
 
 New independent folder *matplotlib_aQuestForAFewGraphicCapabilities* to explore matplotlib in Python & IPython environments
@@ -117,3 +118,10 @@ hints online suggest to delete in ~.cache the folder fontconfig or matplotlib
 Instead, in MacOS go to the folder .matplolib in your home and delete the file
 fontList.cache
 The annoying warning will appear only one more time
+
+(2016 04 15)
+
+1.22 maintenance
+
+corrected ModelSwarm.py in $$slapp$$ - now the agentList is set into the agents
+also if operating sets do not exist

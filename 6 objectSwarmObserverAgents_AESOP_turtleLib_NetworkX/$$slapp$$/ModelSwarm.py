@@ -134,6 +134,7 @@ class ModelSwarm:
          for anAgent in self.agentList:
             anAgent.setContainers()
 
+        if self.agentList != []:
          for anAgent in self.agentList:
             anAgent.setAgentList(self.agentList)
 
