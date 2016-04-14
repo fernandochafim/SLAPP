@@ -125,3 +125,6 @@ The annoying warning will appear only one more time
 
 corrected ModelSwarm.py in $$slapp$$ - now the agentList is set into the agents
 also if operating sets do not exist
+
+class superAgent in agTools.py in $$slap$$ is now SuperAgent (reported the
+correction) in all the projects

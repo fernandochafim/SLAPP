@@ -3,7 +3,7 @@ from Tools import *
 from agTools import *
 import commonVar as common
 
-class Agent(superAgent):
+class Agent(SuperAgent):
     def __init__(self, number,myWorldState,
                  xPos, yPos, lX =-20,rX=19, bY=-20,tY=19, agType=""):
         # the environment

@@ -4,7 +4,7 @@ from agTools import *
 import graphicDisplayGlobalVarAndFunctions as gvf
 import commonVar as common
 
-class Agent(superAgent):
+class Agent(SuperAgent):
     def __init__(self, number,myWorldState,
                  xPos=0, yPos=0, lX =-20,rX=19, bY=-20,tY=19, agType="",
                  sector=0):

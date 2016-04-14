@@ -16,7 +16,7 @@ register_shape("school/pupilSpecialM.gif")
 
 register_shape("desk",((5,-15),(15,-15),(15,15),(5,15)))
 
-class Agent(Turtle, superAgent):
+class Agent(Turtle, SuperAgent):
     def __init__(self, number, myWorldState,
                  xPos, yPos, lX =-20,rX=19, bY=-20, tY=19, agType=""):
         Turtle.__init__(self)

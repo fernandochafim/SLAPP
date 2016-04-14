@@ -1,6 +1,6 @@
 import commonVar as common
 
-class superAgent():
+class SuperAgent():
 
     # add an operating set
     def setAnOperatingSet(self,aSet):
