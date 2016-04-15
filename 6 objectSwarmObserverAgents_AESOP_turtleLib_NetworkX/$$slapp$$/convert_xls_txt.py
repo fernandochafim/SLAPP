@@ -51,14 +51,14 @@ def out_table(sh, book,f,rec): #!!!!!!!!!!
               rec=out_table(sh_macro, book,f,rec)
               if r>0:
                   if sh.cell_value(r-1,0)=="#": #New
-                    print >>f, "#",int(sh.cell_value(r-1,1))+tC() # a small add
+                    print >>f, "#",int(sh.cell_value(r-1,1))+tC() # a small addendum
                                                                   # to preserve order
 
                     #print "#",int(sh.cell_value(r-1,1)) #test
 
           else:
               if c==1 and sh.cell_value(r,0)=="#":
-                  print >>f, int(current)+tC(), # a small add
+                  print >>f, int(current)+tC(), # a small addendum
                                                # to preserve order
               else:
                   print >>f, current,
@@ -120,7 +120,7 @@ if "schedule.xls" in files:
              del lll
              lll=ll[i][:]
 
-             for k in range(int(i1),i2):
+             for k in range(int(i1),i2+1):
                  lll[0]=k+i1-int(i1)
                  ll.append(lll[:])
                  #print lll

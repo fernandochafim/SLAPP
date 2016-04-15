@@ -128,3 +128,5 @@ also if operating sets do not exist
 
 class superAgent in agTools.py in $$slap$$ is now SuperAgent (reported the
 correction) in all the projects
+
+range # a b in schedule.xls now repeats (b - a + 1) times and not (b - a) times
