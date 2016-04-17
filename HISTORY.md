@@ -101,7 +101,7 @@ Have a look to the Reference Handbook, section *The agents and their sets*, sub 
 New independent folder *matplotlib_aQuestForAFewGraphicCapabilities* to explore matplotlib in Python & IPython environments
 
 From now on, SLAPP runs only via a terminal or in IPython (jupyter notebook),
-using runShell.py or iRunShell.ipynb (look at the Reference Handbook, section *How to run SLAPP*)
+using runShell.py or iRunShell.ipynb (look at the Reference Handbook, section *How to run SLAPP*); it is also possible to run SLAPP in IPython via Spyder.
 
 In IPython, the magic command '%matplotlib inline' is internally added if missing;
 if '%matplotlib' is the explicit choice, the 'inline' option is internally stated
