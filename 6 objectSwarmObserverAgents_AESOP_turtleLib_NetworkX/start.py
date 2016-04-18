@@ -10,7 +10,7 @@
 # the file has to contain the path and the name of the folder of the project
 
 
-print "SLAPP 1.22 build 20160418"
+print "SLAPP 1.22 build 20160418b"
 import os
 
 confirm="n"
