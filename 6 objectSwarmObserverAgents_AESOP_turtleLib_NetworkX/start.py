@@ -10,7 +10,7 @@
 # the file has to contain the path and the name of the folder of the project
 
 
-print "SLAPP 1.22 build 20160418b"
+print "SLAPP 1.22 build 20160420"
 import os
 
 confirm="n"
@@ -28,7 +28,7 @@ if name:
     if pathAndProject[-1]=="\n" or pathAndProject[-1]=="\r":
         pathAndProject=pathAndProject[0:-1]
     # -1 means: last character
-    # [0:-1] meand: the string but the last caracter
+    # [0:-1] means: the string but the last caracter
     # the last caracter is eliminated in the giben case (twice) to avoid
     # interferences between the control characters in the file and the
     # path definition
