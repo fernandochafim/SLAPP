@@ -48,7 +48,7 @@ def graphicControl():
   # running in IPython with magic '%matplotlib|%pylab' already set,
   # modified to '%matplotlib inline'
   if get_ipython().config.has_key('InlineBackendConfig') and \
-    mpl.get_backend() == 'MacOSX':
+      not "backend_inline" in mpl.get_backend():
       print "SLAPP running with magic '%matplotlib|%pylab' already set"
 
       get_ipython().magic("%matplotlib inline")
