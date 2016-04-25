@@ -101,7 +101,7 @@ Have a look to the Reference Handbook, section *The agents and their sets*, sub 
 New independent folder *matplotlib_aQuestForAFewGraphicCapabilities* to explore matplotlib in Python & IPython environments
 
 From now on, SLAPP runs only via a terminal or in IPython (jupyter notebook),
-using runShell.py or iRunShell.ipynb (look at the Reference Handbook, section *How to run SLAPP*); it is also possible to run SLAPP in IPython via Spyder.
+using runShell.py or iRunShell.ipynb (look at the Reference Handbook, section *How to run SLAPP*); it is also possible to run SLAPP in IPython via Spyder and in iptyhon in a terminal
 
 In IPython, the magic command '%matplotlib inline' is internally added if missing;
 if '%matplotlib' is the explicit choice, the 'inline' option is internally stated
@@ -130,3 +130,21 @@ class superAgent in agTools.py in $$slap$$ is now SuperAgent (reported the
 correction) in all the projects
 
 range # a b in schedule.xls now repeats (b - a + 1) times and not (b - a) times
+
+more detailed graphic reactions to the graphical environment:
+Now SLAPP works
+- from a plain terminal, with:
+python runShell.py
+OR
+ipython
+AND internally
+%run runShell.py
+(with the same graphic results of python in terminal)
+
+- from jupiter notebook (with inline graphics)
+
+- from Jupiter QtConsole - e.g. Anaconda launcher - (with inline graphics)
+
+- from Spyder ipython (with inline graphics)
+
+(look at the Reference Handbook, section *How to run SLAPP*)
