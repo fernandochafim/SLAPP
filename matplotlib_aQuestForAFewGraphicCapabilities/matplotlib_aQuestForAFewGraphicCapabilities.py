@@ -16,7 +16,11 @@ if len(vMpl)>=3:
 if not vOK:
       print "Matplotlib 1.5.1 or greater required"
       os.sys.exit(1)
-     
+
+print "This 'quest' is related to the file running in IDLE/Spyder(as Python)"+\
+      " or in a plain terminal running Python or in jupyter notebook\n"+\
+      "SLAPP instead works also in a terminal running IPython\n"
+
 
 
 def checkRunningIn():
@@ -53,11 +57,11 @@ if IPython:
   n=input("Your choice: 1. continue without magic matplotlib [output with plt.show()];"+\
           "\n             2. add '%matplotlib' magic command;"+\
           "\n             3. add '%matplotlib inline' magic command:\n")
-	
+
   if n == 1:
       graphicStatus="IPythonNoMagic"
 
-  if n == 2:  
+  if n == 2:
       get_ipython().magic("%matplotlib")
       # alternatively it would be possible to run a .ipy file
       # from jupiter; in this kind of files it is possible to
@@ -66,7 +70,7 @@ if IPython:
 
 
   if n == 3:
-      from IPython import get_ipython  
+      from IPython import get_ipython
       get_ipython().magic("%matplotlib inline")
       graphicStatus="%matplotlib inline"
 
@@ -77,7 +81,7 @@ if IPython:
 if not IPython:
 
  graphicStatus="PythonViaTerminal"
- 
+
  # at http://matplotlib.org/users/shell.html
  # we read "the python IDLE IDE is a Tkinter gui app that does not
  # support pylab interactive mode, regardless of backend"
@@ -125,8 +129,8 @@ if n == "1":
 
  plt.plot([4,2,1,5,-1])
 
- plt.show() # this instruction is strictly necessary if 
- # graphicStatus=="PythonViaIDLEorSpyder" or graphicStatus=="IPythonNoMagic" or 
+ plt.show() # this instruction is strictly necessary if
+ # graphicStatus=="PythonViaIDLEorSpyder" or graphicStatus=="IPythonNoMagic" or
  # in case %matplolib inline" set from jupyter shell, not internally via
  # get_ipython().magic("%matplotlib inline")
  # it does not create any problem in the other cases
@@ -145,10 +149,10 @@ if n == "1":
 
                                # with "matplotlib inline" it works as a wait (very
                                # useful for SLAPP)
-                               
+
 
  if graphicStatus=="PythonViaTerminal":
-  plt.close() 
+  plt.close()
 
 #########################################
 # complex (built in separated segments)
@@ -194,10 +198,10 @@ if n == "2":
 
   plt.show()
 
-  
+
 
  #----------------------------------------
- # running in a Python terminal 
+ # running in a Python terminal
  elif graphicStatus=="PythonViaTerminal":
   mpl.use("TKAgg")
   import matplotlib.pyplot as plt
@@ -223,7 +227,7 @@ if n == "2":
   plt.plot([40,2,10])
 
   raw_input("Enter to shutdown the graphic windows")
-  
+
   plt.close()
   plt.close()
 
@@ -278,10 +282,10 @@ if n == "2":
   sys.stdout.flush()
 
   plt.figure("One, Two")
-  plt.subplot(2,1,1) 
+  plt.subplot(2,1,1)
   plt.plot([1,2,4])
 
-  plt.subplot(2,1,2) 
+  plt.subplot(2,1,2)
   plt.plot([4,2,1])
   #raw_input("Enter") #this waiting status would leave the cell
                       # unfinished, so producing a white graphic window
@@ -293,14 +297,14 @@ if n == "2":
   sys.stdout.flush()
 
   plt.clf()
-  plt.subplot(2,1,1) 
+  plt.subplot(2,1,1)
   plt.plot([10,2,40])
 
-  plt.subplot(2,1,2) 
+  plt.subplot(2,1,2)
   plt.plot([40,2,10])
   #plt.show() # finishing the IPython cell, non strictly necessary
               # & not necessary here with ion()
-  
+
 
 
 
@@ -321,10 +325,10 @@ if n == "2":
 
 
   plt.figure("One, Two")
-  plt.subplot(2,1,1) 
+  plt.subplot(2,1,1)
   plt.plot([1,2,4])
 
-  plt.subplot(2,1,2) 
+  plt.subplot(2,1,2)
   plt.plot([4,2,1])
   plt.show() # strictly necessary here (to see this intermediate plot)
 
@@ -332,10 +336,10 @@ if n == "2":
 
   #plt.figure("One, Two")
   plt.clf()
-  plt.subplot(2,1,1) 
+  plt.subplot(2,1,1)
   plt.plot([10,2,40])
 
-  plt.subplot(2,1,2) 
+  plt.subplot(2,1,2)
   plt.plot([40,2,10])
   plt.show() # necessary here (due to the following raw_input)
 
@@ -356,5 +360,3 @@ print "\nEnding trial!"
 # plt.draw() will re-draw the figure. This allows you
 # to work in interactive mode and, should you have changed
 # your data or formatting, allow the graph itself to change.
-
-
