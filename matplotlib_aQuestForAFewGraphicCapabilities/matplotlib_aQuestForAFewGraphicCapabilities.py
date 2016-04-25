@@ -37,7 +37,7 @@ if IPython:
 
  # running in IPython with magic '%matplotlib|%pylab' already set
  if get_ipython().config.has_key('InlineBackendConfig') and \
-    mpl.get_backend() == 'MacOSX':
+    not "backend_inline" in mpl.get_backend():
       print "running in IPython with magic '%matplotlib|%pylab' already set"
       graphicStatus="%matplotlib"
 
