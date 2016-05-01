@@ -7,6 +7,7 @@ import random
 import os
 from mActions import *
 from turtle import *
+import commonVar as common
 
 # in this module, a few of the try/except structures are not cotrolled
 # for debug
@@ -58,6 +59,10 @@ class ModelSwarm:
 
     # objects
     def buildObjects(self):
+
+        try: self.verbose=common.verbose
+        except: self.verbose=False
+
         for i in range(1):
             aWorldState = WorldState(i)
             self.worldStateList.append(aWorldState)
@@ -106,7 +111,10 @@ class ModelSwarm:
            for line in f:
             if line.split() != []:
                num=int(line.split()[0])
-               print "creating "+agType+": agent #", num
+               if self.verbose and not common.IPython:
+                    print "creating "+agType+": agent #", num
+                    # this output looks IPython with largre number
+                    # of agents
                #print line.split()
 
                # specialized creation function for each model

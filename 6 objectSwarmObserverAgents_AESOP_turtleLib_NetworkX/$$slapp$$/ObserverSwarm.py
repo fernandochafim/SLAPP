@@ -9,7 +9,6 @@ import penPosition
 try: import graphicDisplayGlobalVarAndFunctions as gvf
 except: pass
 from parameters import *
-import commonVar as common
 import os
 
 common.cycle=1
