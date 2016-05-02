@@ -10,17 +10,20 @@
 # the file has to contain the path and the name of the folder of the project
 
 
-print "SLAPP 1.22 build 20160501"
-import os
+def runSLAPP():
+ global start_pyDir
+ print "SLAPP 1.22 build 20160501"
+ import os
 
-confirm="n"
-found=False
-names1=os.listdir("./")
-names2=os.listdir("../")
-name=False
-if "project.txt" in names1: name = "project.txt"
-if "project.txt" in names2: name = "../project.txt"
-if name:
+ confirm="n"
+ found=False
+ start_pyDir=os.getcwd()
+ names1=os.listdir("./")
+ names2=os.listdir("../")
+ name=False
+ if "project.txt" in names1: name = "project.txt"
+ if "project.txt" in names2: name = "../project.txt"
+ if name:
     currentProject=open (name,"r")
     pathAndProject=currentProject.readline()
     if pathAndProject[-1]=="\n" or pathAndProject[-1]=="\r":
@@ -37,9 +40,9 @@ if name:
     if confirm == "y" or confirm == "Y" or confirm == "": found=True
     currentProject.close()
 
-if confirm == "y" or confirm == "Y" or confirm == "":
+ if confirm == "y" or confirm == "Y" or confirm == "":
     project = pathAndProject
-else:
+ else:
     project = raw_input("Project name? ")
     if not project in names1: print "Project " + project + " not found"
     else:
@@ -47,43 +50,46 @@ else:
         project="./"+project
 
 
-if found:
- import sys
- sys.path.append("./$$slapp$$")
- if confirm !="y": sys.path.append(project)
- else:             sys.path.append(pathAndProject)
+ if found:
+  import sys
+  sys.path.append("./$$slapp$$")
+  if confirm !="y": sys.path.append(project)
+  else:             sys.path.append(pathAndProject)
 
- import commonVar as common
- from Tools import *
- import graphicControl as gc
+  import commonVar as common
+  import Tools as tl
+  import graphicControl as gc
 
- gc.graphicControl()
- #print common.graphicStatus
+  gc.graphicControl()
+  #print common.graphicStatus
 
- common.IPython=checkRunningIn()
- if common.IPython: print "running in IPython"
- else:              print "running in Python"
+  common.IPython=tl.checkRunningIn()
+  if common.IPython: print "running in IPython"
+  else:              print "running in Python"
 
- from ObserverSwarm import *
+  import ObserverSwarm as obs
 
 
 
- common.debug=False # if debug il True a large part of the try/except
-                    # structures will be bypassed, so the errors will
-                    # be managed directly by the Python interpreter
+  common.debug=False # if debug il True a large part of the try/except
+                     # structures will be bypassed, so the errors will
+                     # be managed directly by the Python interpreter
 
-                    # this choice can be useful when you build a new project
-                    # and as an expert user you want to check the errors
-                    # in a basic way
- print "debug =",common.debug
+                     # this choice can be useful when you build a new project
+                     # and as an expert user you want to check the errors
+                     # in a basic way
+  print "debug =",common.debug
 
- observerSwarm = ObserverSwarm(project)
+  observerSwarm = obs.ObserverSwarm(project)
 
- # create objects
- observerSwarm.buildObjects()
+  # create objects
+  observerSwarm.buildObjects()
 
- # create actions
- observerSwarm.buildActions()
+  # create actions
+  observerSwarm.buildActions()
 
- # run
- observerSwarm.run()
+  # run
+  observerSwarm.run()
+
+# running alone
+if __name__ == "__main__": runSLAPP()
