@@ -12,7 +12,7 @@
 
 def runSLAPP():
  global start_pyDir
- print "SLAPP 1.22 build 20160503"
+ print "SLAPP 1.22 build 20160504"
  import os
 
  confirm="n"
@@ -90,6 +90,14 @@ def runSLAPP():
 
   # run
   observerSwarm.run()
+
+  if common.IPython:
+      from IPython import get_ipython
+      get_ipython().magic("%load_ext autoreload")
+      get_ipython().magic("%autoreload") # to allow rerun looking at
+                                         # new values of variables
+                                         # set via commonVat.py
+
 
 # running alone
 if __name__ == "__main__": runSLAPP()
