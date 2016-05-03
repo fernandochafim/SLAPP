@@ -113,7 +113,7 @@ class ModelSwarm:
                num=int(line.split()[0])
                if self.verbose and not common.IPython:
                     print "creating "+agType+": agent #", num
-                    # this output looks IPython with largre number
+                    # this output locks IPython with largre number
                     # of agents
                #print line.split()
 
