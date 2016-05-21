@@ -89,7 +89,9 @@ def graphicControl():
       common.graphicStatus="%matplotlib inline"
 
    # size of the inline pictures
-   plt.rcParams['figure.figsize'] = 8, 6  #16, 12
+   plt.rcParams['figure.figsize'] = 12, 9  #16, 12    (in inches, but ...
+                                                     # related to the screen
+                                                     # pixel density)
 
 
 
