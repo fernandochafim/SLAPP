@@ -12,7 +12,7 @@
 
 def runSLAPP():
  global start_pyDir
- print "SLAPP 1.22 build 20160504"
+ print "SLAPP 1.22 build 20160518?"
  import os
 
  confirm="n"
@@ -93,10 +93,16 @@ def runSLAPP():
 
   if common.IPython:
       from IPython import get_ipython
-      get_ipython().magic("%load_ext autoreload")
+      get_ipython().magic("%reload_ext autoreload") #better the %load to
+                                                    #to avoid warning when rerun
       get_ipython().magic("%autoreload") # to allow rerun looking at
                                          # new values of variables
-                                         # set via commonVat.py
+                                         # set via commonVar.py
+
+      get_ipython().magic("%reset -f")   # to clean memory, in our case
+                                         # the graph of the network when
+                                         # rerunning in IPython
+
 
 
 # running alone
