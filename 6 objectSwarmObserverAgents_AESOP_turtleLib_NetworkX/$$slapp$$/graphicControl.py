@@ -44,6 +44,7 @@ def graphicControl():
  if IPython:
   from IPython import get_ipython
   import matplotlib as mpl
+  import matplotlib.pyplot as plt
 
   # check if running in a plain terminal with IPython starting with the
   # 'ipython' command line OR in a jupyter notebook
@@ -86,6 +87,9 @@ def graphicControl():
 
       print "'%matplotlib inline' magic command NOW SET"
       common.graphicStatus="%matplotlib inline"
+
+   # size of the inline pictures
+   plt.rcParams['figure.figsize'] = 8, 6  #16, 12
 
 
 
