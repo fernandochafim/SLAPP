@@ -12,8 +12,9 @@
 
 def runSLAPP():
  global start_pyDir
- print "SLAPP 1.22 build 20160521"
+ print "SLAPP 1.22 build 20160522"
  import os
+
 
  confirm="n"
  found=False
@@ -32,8 +33,8 @@ def runSLAPP():
         pathAndProject=pathAndProject[0:-1]
     # -1 means: last character
     # [0:-1] means: the string but the last caracter
-    # the last caracter is eliminated in the giben case (twice) to avoid
-    # interferences between the control characters in the file and the
+    # the last caracter is eliminated in the given case (twice) to avoid
+    # interferences between the control characters within the file and the
     # path definition
     print "path and project = " + pathAndProject
     confirm=raw_input("do you confirm? ([y]/n): ")
@@ -53,7 +54,7 @@ def runSLAPP():
  if found:
   import sys
   sys.path.append("./$$slapp$$")
-  if confirm !="y": sys.path.append(project)
+  if confirm =="n": sys.path.append(project)
   else:             sys.path.append(pathAndProject)
 
   import commonVar as common
@@ -91,10 +92,10 @@ def runSLAPP():
   # run
   observerSwarm.run()
 
+  """
   if common.IPython:
       from IPython import get_ipython
-      get_ipython().magic("%reload_ext autoreload") #better the %load to
-                                                    #to avoid warning when rerun
+      get_ipython().magic("%load_ext autoreload") #do not use %reload
       get_ipython().magic("%autoreload") # to allow rerun looking at
                                          # new values of variables
                                          # set via commonVar.py
@@ -102,8 +103,8 @@ def runSLAPP():
       get_ipython().magic("%reset -f")   # to clean memory, in our case
                                          # the graph of the network when
                                          # rerunning in IPython
-
-
+  """
+  print "End of the run! TO RUN AGAIN IN JUPYTER REMBER TO RESTART THE KERNEL"
 
 # running alone
 if __name__ == "__main__": runSLAPP()

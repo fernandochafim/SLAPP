@@ -88,11 +88,18 @@ def graphicControl():
       print "'%matplotlib inline' magic command NOW SET"
       common.graphicStatus="%matplotlib inline"
 
-   # size of the inline pictures
-   plt.rcParams['figure.figsize'] = 12, 9  #16, 12    (in inches, but ...
-                                                     # related to the screen
-                                                     # pixel density)
-
+  # size of the pictures
+  width=12
+  height=8
+  try: width=common.width
+  except: pass
+  try: height=common.height
+  except: pass
+  plt.rcParams['figure.figsize'] = width, height  #in inches, but ... on paper
+                                                  #and on the screen the effct is
+                                                  #related to the screen
+                                                  #and printer pixel density
+                                                  #suggested ratio 3/2
 
 
 if __name__=="__main__": graphicControl()

@@ -16,3 +16,11 @@ maxSector=0
 orderedListOfNodes=[]
 verbose=False
 clonedN=0
+
+# size of the pictures
+width= 10
+height=9.5 #in inches, but ... on paper
+           #and on the screen the effct is
+           #related to the screen
+           #and printer pixel density
+           #suggested ratio 3/2
