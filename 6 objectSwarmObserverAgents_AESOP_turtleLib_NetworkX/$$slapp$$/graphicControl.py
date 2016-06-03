@@ -96,7 +96,7 @@ def graphicControl():
   try: height=common.height
   except: pass
   plt.rcParams['figure.figsize'] = width, height  #in inches, but ... on paper
-                                                  #and on the screen the effct is
+                                                  #and on the screen the effect is
                                                   #related to the screen
                                                   #and printer pixel density
                                                   #suggested ratio 3/2
