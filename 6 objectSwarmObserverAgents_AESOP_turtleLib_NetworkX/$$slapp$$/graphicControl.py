@@ -88,7 +88,7 @@ def graphicControl():
       print "'%matplotlib inline' magic command NOW SET"
       common.graphicStatus="%matplotlib inline"
 
-  # size of the pictures
+  # size of the pictures within an IPython notebook
   width=12
   height=8
   try: width=common.width
