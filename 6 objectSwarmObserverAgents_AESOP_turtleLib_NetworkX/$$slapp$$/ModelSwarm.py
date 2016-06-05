@@ -346,7 +346,7 @@ class ModelSwarm:
                 except: pass
             else:
                 try: exec "self.worldStateList[0]."+task[2]+"()"
-                except: pass
+                except: print task[2], "undefined in WorldState"
 
 
 
