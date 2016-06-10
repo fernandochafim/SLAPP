@@ -12,7 +12,7 @@
 
 def runSLAPP():
  global start_pyDir
- print "SLAPP 1.22 build 20160605"
+ print "SLAPP 1.22 build 20160610"
  import os
 
 
@@ -88,6 +88,7 @@ def runSLAPP():
 
   # create actions
   observerSwarm.buildActions()
+  common.pro=project # to be used within the oActions.py extension
 
   # run
   observerSwarm.run()
