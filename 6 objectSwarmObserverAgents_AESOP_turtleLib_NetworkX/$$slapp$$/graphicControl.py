@@ -60,7 +60,8 @@ def graphicControl():
 
 
   # IN a jupyter notebook OR in a Jupyter QtConsole (same effects)
-  if "ipykernel.zmqshell.ZMQInteractiveShell" \
+  #if "ipykernel.zmqshell.ZMQInteractiveShell" \
+  if "zmqshell.ZMQInteractiveShell" \
    in str(get_ipython()):
 
    # running in IPython with magic '%matplotlib|%pylab' already set,
