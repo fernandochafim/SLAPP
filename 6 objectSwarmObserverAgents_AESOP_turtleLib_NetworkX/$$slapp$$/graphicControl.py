@@ -60,7 +60,6 @@ def graphicControl():
 
 
   # IN a jupyter notebook OR in a Jupyter QtConsole (same effects)
-  #if "ipykernel.zmqshell.ZMQInteractiveShell" \
   if "zmqshell.ZMQInteractiveShell" \
    in str(get_ipython()):
 
