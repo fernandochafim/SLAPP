@@ -12,7 +12,7 @@
 
 def runSLAPP():
  global start_pyDir
- print "SLAPP 1.22 build 20160626"
+ print "SLAPP 1.22 build 20160627"
  import os
 
 
@@ -95,7 +95,7 @@ def runSLAPP():
 
 
   if common.IPython:
-    print "End of the run! TO RUN AGAIN IN JUPYTER REMBER TO RESTART THE KERNEL"
+    print "End of the run! TO RUN AGAIN IN JUPYTER REMEMBER TO RESTART THE KERNEL"
 
 # running alone
 if __name__ == "__main__": runSLAPP()
