@@ -19,7 +19,8 @@ if not vOK:
 
 print "This 'quest' is related to the file running in IDLE/Spyder(as Python)"+\
       " or in a plain terminal running Python or in jupyter notebook\n"+\
-      "SLAPP instead works also in a terminal running IPython\n"
+      "SLAPP instead works also - with limitations - in a terminal running IPython\n"+\
+      "(not in a terminal running 'jupyter console')"
 
 
 
