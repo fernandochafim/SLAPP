@@ -148,3 +148,9 @@ AND internally
 - from Spyder ipython (with inline graphics)
 
 (look at the Reference Handbook, section *How to run SLAPP*)
+
+(2016 07 25)
+
+1.3 significant collection of maintenance modification (in GitHub history)
+
+last change: fixed an error with Tkinter, using IPython 5.0 or greater

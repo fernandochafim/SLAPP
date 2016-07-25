@@ -43,6 +43,8 @@ def graphicControl():
  # running in IPython
  if IPython:
   from IPython import get_ipython
+  import matplotlib
+  matplotlib.use("TkAgg")
   import matplotlib as mpl
   import matplotlib.pyplot as plt
 
