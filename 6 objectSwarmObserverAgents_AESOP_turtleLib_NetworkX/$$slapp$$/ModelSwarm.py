@@ -315,8 +315,22 @@ class ModelSwarm:
                 if subStep == "read_script":
                         found=True
                         if self.ff=="":
-                            try: self.ff=open(project+"/schedule.txt","r")
-                            except: pass
+                           #create the dictionary of methods probability. if any
+                           try:
+                             schedule=open(project+"/schedule.txt","r")
+                             self.methodProbs={}
+                             for line in schedule:
+                               lineSplit=line.split()
+                               if len(lineSplit)==3 and lineSplit[1].find('.')>0:
+                                  if  float(lineSplit[1]) > 0:
+                                    self.methodProbs[lineSplit[2]]=float(lineSplit[1])
+                             if self.methodProbs != {}:
+                                 print "methodProbabilities =", self.methodProbs
+                             schedule.close()
+                           except: pass
+
+                           try: self.ff=open(project+"/schedule.txt","r")
+                           except: pass
                         self.actionGroup100.do(self,cycle)
                     # self here is the model env.
                     # not added automatically

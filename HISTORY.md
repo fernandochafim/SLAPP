@@ -154,3 +154,7 @@ AND internally
 1.3 significant collection of maintenance modification (in GitHub history)
 
 last change: fixed an error with Tkinter, using IPython 5.0 or greater
+
+(2016 08 02)
+
+1.31 added the output of the probabilities of the methods, if any
