@@ -318,14 +318,14 @@ class ModelSwarm:
                            #create the dictionary of methods probability. if any
                            try:
                              schedule=open(project+"/schedule.txt","r")
-                             self.methodProbs={}
+                             common.methodProbs={}
                              for line in schedule:
                                lineSplit=line.split()
                                if len(lineSplit)==3 and lineSplit[1].find('.')>0:
                                   if  float(lineSplit[1]) > 0:
-                                    self.methodProbs[lineSplit[2]]=float(lineSplit[1])
-                             if self.methodProbs != {}:
-                                 print "methodProbabilities =", self.methodProbs
+                                    common.methodProbs[lineSplit[2]]=float(lineSplit[1])
+                             if common.methodProbs != {}:
+                                 print "methodProbabilities =", common.methodProbs
                              schedule.close()
                            except: pass
 
