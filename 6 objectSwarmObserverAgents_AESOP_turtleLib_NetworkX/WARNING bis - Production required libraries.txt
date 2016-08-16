@@ -11,4 +11,4 @@ NetworkX, which is at http://networkx.github.io
 NB
 NetworkX 1.9.1 or greater required
 
-matplotlib 1.5.1 suggested, but the shell works also with 1.3.* and 1.4.*
+matplotlib 1.5.1 suggested
