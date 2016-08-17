@@ -1,6 +1,6 @@
 
-Running the project debug with the option debug set to False in start.py
-we have
+Running the project debug with the option debug set to False in
+commonVar.py or missing, we have
 
 
 (...)
@@ -28,15 +28,17 @@ enter to conclude
 checkCloc effectively does not exists as a method (it is a typo in schedule.xls);
 the warning message perfectly identify the problem; the program is anyway running
 
-the we have several message declaring that it is impossibile to apply the method
-checkSuperClock to a few agents
+Then we have several message declaring that it is impossible to apply the method
+checkSuperClock to a few agents; the attempt of communicating that the
+"clock is at" fails
 
-But why?
+But why? The SLAPP attempt of capturing the errors, is hiding here the Python
+messages explaining what is happening
 
 
 
-Correct the typo writing correctly checkClock, set debug to True in start.py
-and run again
+Correct the typo writing correctly checkClock and then set debug to True in
+CommonVar.py and run again
 
 We have
 
@@ -75,8 +77,9 @@ Traceback (most recent call last):
     print "clock is at ", common.cycles
 AttributeError: 'module' object has no attribute 'cycles'
 
-so we discover is due to the use of the attribute cycles related to common
-(the correct name is cycle)
+We discover that the error is due to the use of the attribute cycles supposed
+to be in common, while the correct name is cycles.
+
 
 
 
