@@ -157,4 +157,10 @@ last change: fixed an error with Tkinter, using IPython 5.0 or greater
 
 (2016 08 02)
 
-1.31 added the output of the probabilities of the methods, if any
+1.31 new feature: the report in output of the probabilities of the methods,
+     if any
+
+(2016 08 17)
+
+1.32 debug option can now be set from the project; clarified also in the
+     Reference

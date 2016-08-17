@@ -12,7 +12,7 @@
 
 def runSLAPP():
  global start_pyDir
- print "SLAPP 1.31 build 20160816"
+ print "SLAPP 1.32 build 20160817"
  import os
 
 
@@ -70,15 +70,18 @@ def runSLAPP():
 
   import ObserverSwarm as obs
 
+  # if debug is defined (True or False) in commonVar.py of the project, no
+  # other action is requested
+  try: common.debug
+  # if the definition is missing, we do it here
+  except:
+   common.debug=False # if debug il True a large part of the try/except
+                      # structures will be bypassed, so the errors will
+                      # be managed directly by the Python interpreter
 
-
-  common.debug=False # if debug il True a large part of the try/except
-                     # structures will be bypassed, so the errors will
-                     # be managed directly by the Python interpreter
-
-                     # this choice can be useful when you build a new project
-                     # and as an expert user you want to check the errors
-                     # in a basic way
+                      # this choice can be useful when you build a new project
+                      # and as an expert user you want to check the errors
+                      # in a basic way
   print "debug =",common.debug
 
   observerSwarm = obs.ObserverSwarm(project)
