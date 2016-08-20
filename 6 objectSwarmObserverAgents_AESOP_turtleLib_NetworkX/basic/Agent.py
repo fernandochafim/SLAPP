@@ -12,7 +12,8 @@ class Agent(SuperAgent):
         self.rX = rX
         self.bY = bY
         self.tY = tY
-        self.myWorldState = myWorldState
+        if myWorldState != 0:
+           self.myWorldState = myWorldState
         self.agType=agType
         # the agent
         self.xPos = xPos

@@ -30,9 +30,9 @@ def createTheAgent(self,line,num,leftX,rightX,bottomY,topY,agType):
                 #explictly pass self, here we use a function
                 #print "leftX,rightX,bottomY,topY", leftX,rightX,bottomY,topY
 
-                if len(line.split())==1:                 
-                 anAgent = Agent(num, self.worldStateList[0],
-                          random.randint(leftX,rightX), 
+                if len(line.split())==1:
+                 anAgent = Agent(num, self.worldState,
+                          random.randint(leftX,rightX),
                           random.randint(bottomY,topY),
                           leftX,rightX,bottomY,topY,agType=agType)
                  self.agentList.append(anAgent)

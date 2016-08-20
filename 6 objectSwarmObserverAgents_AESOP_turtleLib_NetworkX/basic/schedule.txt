@@ -5,10 +5,22 @@ bland dance
 # 4
 all 0.5 dance
 tasteC eat
+WorldState 0.1 setGeneralMovingPro
 # 5
 all eat
 all dance
+tasteA eat
+# 6
+tasteA eat
 # 7
 tasteA 0.5 dance
+tasteA eat
 # 8
 tasteB dance
+tasteA eat
+# 9
+tasteA eat
+all dance
+# 10
+tasteA eat
+tasteC dance

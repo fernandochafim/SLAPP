@@ -2,12 +2,10 @@
 from Tools import *
 
 class WorldState:
-    def __init__(self, number):
+    def __init__(self):
         # the environment
-        self.number = number
         self.generalMovingProb=1
-        print "World state number ", self.number, \
-     	      " has been created."
+        print "World state number has been created."
 
     # ",**d" in the parameter lists of the methods is a place holder
     # in case we use, calling the method, a dictionary as last parameter

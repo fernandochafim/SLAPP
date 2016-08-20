@@ -164,3 +164,29 @@ last change: fixed an error with Tkinter, using IPython 5.0 or greater
 
 1.32 debug option can now be set from the project; clarified also in the
      Reference
+
+(2016 08 20)
+
+1.33 Reengineering WorldState, as anticipated in version 1.11, to have
+     a clean structure, now working both as calculation tool and a repository
+     of values, have a look to the Reference Handbook
+
+     In mAction.py modify any occurrence of
+     worldStateList[0]
+     to
+     worldState
+
+     Unfortunately you have to modify a bit you projects
+
+     If you do not use the WorldState feature, simply delete the file
+     WorldState.py
+
+     If you use it, please modify
+     def __init__(self,number):
+
+     to
+
+     def __init__(self):
+
+     and eliminate any reference to number or to self.number, maybe also in the
+     initial print, always in WorldState.py

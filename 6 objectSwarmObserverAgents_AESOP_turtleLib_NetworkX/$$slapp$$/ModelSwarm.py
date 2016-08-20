@@ -1,13 +1,16 @@
 #ModelSwarm.py
 import Tools
 from Agent import *
-from WorldState import *
+import commonVar as common
+common.worldStateExist=True
+try: from WorldState import *
+except: common.worldStateExist=False
 from ActionGroup import *
 import random
 import os
 from mActions import *
 from turtle import *
-import commonVar as common
+
 
 # in this module, a few of the try/except structures are not cotrolled
 # for debug
@@ -30,7 +33,6 @@ class ModelSwarm:
         self.ff="" #in case of repeated execution without restarting the shell
         self.nAgents = nAgents
         self.agentList = []
-        self.worldStateList=[]
 
         self.worldXSize= worldXSize
         self.worldYSize= worldYSize
@@ -63,9 +65,10 @@ class ModelSwarm:
         try: self.verbose=common.verbose
         except: self.verbose=False
 
-        for i in range(1):
-            aWorldState = WorldState(i)
-            self.worldStateList.append(aWorldState)
+        if common.worldStateExist:
+            self.worldState = WorldState()
+        else:
+            self.worldState=0
 
         leftX =int(-self.worldXSize/2)
         rightX=int(self.worldXSize-1 -self.worldXSize/2)
@@ -74,7 +77,7 @@ class ModelSwarm:
 
         # internal agents
         for i in range(self.nAgents):
-            anAgent = Agent(i, self.worldStateList[0],
+            anAgent = Agent(i, self.worldState,
                     random.randint(leftX,rightX),
                     random.randint(bottomY,topY), leftX,rightX,
                     bottomY,topY,agType="bland")
@@ -279,8 +282,11 @@ class ModelSwarm:
                         self.applyFromSchedule(localList,task)
 
                 if task[0]=='WorldState':
-                    self.share=0
-                    localList=address.worldStateList[:]
+                    #self.share=0
+                    if address.worldState==0:
+                        print "WorldState.py is missing, you cannot use WorldState here."
+                        os.sys.exit(1)
+                    localList=[address.worldState] #apply from schedule works on a list
                     self.applyFromSchedule(localList,task)
 
         self.actionGroup100.do = do100 # do is a variable linking a method
@@ -349,20 +355,35 @@ class ModelSwarm:
 
 
         if task[0]=='WorldState':
-            if task[2]=='setGeneralMovingProb':
-                prob = 1
-                try:  prob = float(task[1]) # does task[1] contains
-                                            # a number?
-                except: pass
-                d={}
-                d['generalMovingProb']=prob
-                try: exec "askEachAgentInCollection(localList,"+task[0]+"."+task[2]+", **d)"
-                except: pass
+
+            # computational use
+            #localList contains a unique worldState instance
+            if task[1]=="computationalUse" or task[1]=="specialUse":
+                #localList contains a unique worldState instance
+                if common.debug: exec "localList[0]."+task[2]+"()"
+                else:
+                  try: exec "localList[0]."+task[2]+"()"
+                  except: print task[2], "undefined in WorldState"
+
+            # using WorldStte to set/get values
             else:
-                try: exec "self.worldStateList[0]."+task[2]+"()"
-                except: print task[2], "undefined in WorldState"
-
-
+                try:  aValue = float(task[1]) # does task[1] contains                                              # a number?
+                except:
+                    print "After WorldState, in schedule.xls we wait: "+\
+                          "'computationalUse' or 'specialUse' or "+\
+                          "a number.", task[1],"found."
+                    os.sys.exit(1)
+                if task[2] != "":
+                    d={}
+                    d[task[2]]=float(task[1])
+                    #localList contains a unique worldState instance
+                    if common.debug: exec "askEachAgentInCollection(localList,"+task[0]+"."+task[2]+", **d)"
+                    else:
+                      try: exec "askEachAgentInCollection(localList,"+task[0]+"."+task[2]+", **d)"
+                      except: print task[2], "undefined in WorldState"
+                else:
+                    print "Unable to handle a missing task in WorldState schedule."
+                    os.sys.exit(1)
 
         #if task[0] is 'all' or a type of agent
         if check(task[0],self.types):

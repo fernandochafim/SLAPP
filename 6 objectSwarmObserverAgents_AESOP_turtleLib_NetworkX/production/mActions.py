@@ -23,13 +23,13 @@ def createTheAgent(self,line,num,leftX,rightX,bottomY,topY,agType):
 
                 # recipes
                 if len(line.split())==1:
-                 anAgent = Agent(num, self.worldStateList[0], agType=agType)
+                 anAgent = Agent(num, self.worldState, agType=agType)
                  self.agentList.append(anAgent)
                  anAgent.setAgentList(self.agentList)
 
                 # factories
                 elif len(line.split())==4:
-                 anAgent = Agent(num, self.worldStateList[0],
+                 anAgent = Agent(num, self.worldState,
                                  int(line.split()[1]),
                                  int(line.split()[2]),    agType=agType,
                                  sector=int(line.split()[3]))
@@ -61,7 +61,7 @@ def addAFactory(address):
 
         common.clonedN+=1
         anAgent = Agent(toBeCloned.number*100+common.clonedN,
-                        address.worldStateList[0],
+                        address.worldState,
                         toBeCloned.xPos+modPosition(),
                         toBeCloned.yPos+modPosition(),
                         agType=toBeCloned.agType,
