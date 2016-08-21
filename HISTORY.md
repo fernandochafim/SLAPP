@@ -165,7 +165,7 @@ last change: fixed an error with Tkinter, using IPython 5.0 or greater
 1.32 debug option can now be set from the project; clarified also in the
      Reference
 
-(2016 08 20)
+(2016 08 21)
 
 1.33 Reengineering WorldState, as anticipated in version 1.11, to have
      a clean structure, now working both as calculation tool and a repository
