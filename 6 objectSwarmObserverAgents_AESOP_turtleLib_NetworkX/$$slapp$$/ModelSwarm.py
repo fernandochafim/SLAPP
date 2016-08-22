@@ -192,8 +192,6 @@ class ModelSwarm:
         def do100(address, cycle):
             global task
 
-            actionDictionary[self.actionGroup100.getName()]=self.actionGroup100
-
             while True:
                 if task[0]=="#":
                     if int(task[1]) > cycle: break
@@ -357,6 +355,7 @@ class ModelSwarm:
         if task[0]=='WorldState':
 
             # computational use
+
             #localList contains a unique worldState instance
             if task[1]=="computationalUse" or task[1]=="specialUse":
                 #localList contains a unique worldState instance
@@ -366,6 +365,7 @@ class ModelSwarm:
                   except: print task[2], "undefined in WorldState"
 
             # using WorldStte to set/get values
+
             else:
                 try:  aValue = float(task[1]) # does task[1] contains                                              # a number?
                 except:

@@ -190,3 +190,9 @@ last change: fixed an error with Tkinter, using IPython 5.0 or greater
 
      and eliminate any reference to number or to self.number, maybe also in the
      initial print, always in WorldState.py
+
+(2016 08 23)
+
+1.34 Eliminated everywhere the dictionary of the action groups
+     actionDictionary, unnecessary, but kept in Tools.py of $$slapp$$ for
+     retro compatibility

@@ -20,8 +20,10 @@ and values of the extra named arguments (or the empty dictionary,
 if there are none).
 """
 
-# dictionary of the action groups
+# dictionary of the action groups (uilitynnecessary, kept only for
+# retro compatibility)
 actionDictionary={}
+
 
 # applying a method to a collection of instances
 def askEachAgentInCollection(collection,method,**k):

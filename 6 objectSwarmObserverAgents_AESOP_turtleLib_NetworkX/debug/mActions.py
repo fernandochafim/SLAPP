@@ -11,7 +11,6 @@ def do1(address):
             # set in each call to the group
             self.actionGroup1.setName("move")
             # set in each call to the group
-            actionDictionary[self.actionGroup1.getName()]=self.actionGroup1
 
             # keep safe the original list
             address.agentListCopy=address.agentList[:]
