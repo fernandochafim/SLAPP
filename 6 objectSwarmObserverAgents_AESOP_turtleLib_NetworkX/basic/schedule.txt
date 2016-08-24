@@ -1,9 +1,7 @@
 # 1
 bland eat
 bland dance
-tasteA -1.0 addTask
 # 2
-all -1.0 elimTask
 # 4
 all 0.5 dance
 tasteC eat
