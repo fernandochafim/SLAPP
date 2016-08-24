@@ -66,16 +66,28 @@ class Agent(SuperAgent):
         print self.agType, "agent # ", self.number, " is at X = ", \
                self.xPos, " Y = ", self.yPos
 
-    # add a task (from v. 1.35 of SLAPP)
+    # adding a task (from v. 1.35 of SLAPP)
     # common is derived importing Tools
     def addTask(self):
 
         newTask="all dance"
 
-        print "agent", self.number, "added a task for cycle", common.cycle + 1
+        print "agent", self.number, "adding a task for cycle", common.cycle + 1
         if not common.addTasks.has_key(common.cycle + 1):
             common.addTasks[common.cycle + 1]=[]
         common.addTasks[common.cycle + 1].append(newTask)
+
+    # eliminating a task (from v. 1.35 of SLAPP)
+    # common is derived importing Tools
+    def elimTask(self):
+
+        killTask="tasteC eat"
+
+        print "agent", self.number, "eliminating a task for cycle", \
+                       common.cycle + 2
+        if not common.elimTasks.has_key(common.cycle + 2):
+            common.elimTasks[common.cycle + 2]=[]
+        common.elimTasks[common.cycle + 2].append(killTask)
 
 
 

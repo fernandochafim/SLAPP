@@ -119,7 +119,7 @@ class ModelSwarm:
                num=int(line.split()[0])
                if self.verbose and not common.IPython:
                     print "creating "+agType+": agent #", num
-                    # this output locks IPython with largre number
+                    # this output locks IPython when we have large number
                     # of agents
                #print line.split()
 
@@ -199,23 +199,29 @@ class ModelSwarm:
                 if task[0]=="#":
                     if int(task[1]) > cycle: break
 
-                ## check for addaded tasks
+                ## check for added tasks
                 if addedTask(cycle): task=getAddedTask(cycle)
                 ## regular schedule
                 else: task=read_s(self.ff)
                 #print "***", task
+
+                ## check for eliminated tasks
+                if elimTask(cycle):
+                    task=getElimTask(task,cycle)
+                    #print '---', task
 
                 if task[0]=="#":
                     if int(task[1]) > cycle: break
                 if task[0]=="0": break
 
                 #if task[0] is all or an agent type
-                if check(task[0],self.types):
+                if check(task[0],self.types,address.operatingSets):
                     # keep safe the original list
                     localList=[]
                     for ag in address.agentList:
                         if   task[0]=="all": localList.append(ag)
                         elif task[0]==ag.getAgentType(): localList.append(ag)
+
                     # never in the same order (please comment if you want to keep
                     # always the same sequence
                     random.shuffle(localList)
@@ -392,7 +398,7 @@ class ModelSwarm:
                     os.sys.exit(1)
 
         #if task[0] is 'all' or a type of agent
-        if check(task[0],self.types):
+        if check(task[0],self.types,self.operatingSets):
             if self.share!=0:
                if common.debug: exec "askEachAgentInCollection(localList,Agent"+"."+task[2]+")"
                else:
@@ -444,12 +450,19 @@ def read_s(f):
     return task.split()
 
 # check if it is an agent
-def check(s,aList):
+def check(s,aList,opSets):
     found=False
     if s.find("all")==0  : found=True
     if s.find("bland")==0: found=True
     for name in aList:
         if s.find(name)==0:found=True
+
+    # agent not found (maybe 'dummy' has been set as a fictitious
+    # agent name, to eliminate a task due to the action made by
+    # an agent)
+    if not found and not s in opSets and s != '#':
+        print "agent", s, 'does not exist'
+
     return found
 
 
@@ -465,3 +478,29 @@ def addedTask(t):
 def getAddedTask(t):
     # returning the first item and removing it
     return common.addTasks[t].pop(0).split()
+
+## look for tasks to be eliminated
+def elimTask(t):
+    if common.elimTasks.has_key(t):
+       if common.elimTasks[t] == []: return False
+       else:                         return True
+    else:                            return False
+
+## find tasks to be Eliminated
+def getElimTask(task,t):
+    found=False
+    i=-1
+    for killTask in common.elimTasks[t]:
+        i+=1
+        if task[0]==killTask.split()[0] and \
+           task[1]==killTask.split()[1]:
+           if len(killTask.split())==3:
+               if task[2]==killTask.split()[2]: found=True
+           else:                                found=True
+
+    if found:
+        common.elimTasks[t].pop(i)
+        print task[0],'modified to dummy in:', task
+        task[0]='dummy'
+
+    return task
