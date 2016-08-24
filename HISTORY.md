@@ -196,3 +196,11 @@ last change: fixed an error with Tkinter, using IPython 5.0 or greater
 1.34 Eliminated everywhere the dictionary of the action groups
      actionDictionary, unnecessary, but kept in Tools.py of $$slapp$$ for
      retro compatibility
+
+(2016 08 23)
+
+1.35 Introduced the capability of the agents of adding or eliminating tasks in
+     the schedule (at the level of the schedule reported in the schedule.xls
+     file)
+
+     Have a look  

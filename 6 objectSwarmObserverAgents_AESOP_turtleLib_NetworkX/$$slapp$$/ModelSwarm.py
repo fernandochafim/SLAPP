@@ -11,6 +11,9 @@ import os
 from mActions import *
 from turtle import *
 
+# structure for adding and eliminating tasks
+common.addTasks={}
+common.elimTasks={}
 
 # in this module, a few of the try/except structures are not cotrolled
 # for debug
@@ -196,7 +199,10 @@ class ModelSwarm:
                 if task[0]=="#":
                     if int(task[1]) > cycle: break
 
-                task=read_s(self.ff)
+                ## check for addaded tasks
+                if addedTask(cycle): task=getAddedTask(cycle)
+                ## regular schedule
+                else: task=read_s(self.ff)
                 #print "***", task
 
                 if task[0]=="#":
@@ -445,3 +451,17 @@ def check(s,aList):
     for name in aList:
         if s.find(name)==0:found=True
     return found
+
+
+## look for tasks to be added
+def addedTask(t):
+    if common.addTasks.has_key(t):
+       if common.addTasks[t] == []: return False
+       else:                        return True
+    else:                           return False
+
+
+## find tasks to be added
+def getAddedTask(t):
+    # returning the first item and removing it
+    return common.addTasks[t].pop(0).split()

@@ -59,31 +59,24 @@ class Agent(SuperAgent):
             if self.yPos < self.bY : self.yPos=self.bY
             if self.yPos > self.tY : self.yPos=self.tY
 
-            if abs(dx) > 4 and abs(dy) > 4 :
-
-            # modify actionGroup "move" via local code execution
-                actionGroup=actionDictionary.get("move","none")
-                                    # in case, return "none"
-
-                if actionGroup=="none": print "warning, actionGroup not found "+\
-                                "in agent "+ str(self.number)
-
-                else:
-                   # this code show that it is possibile to generate local code
-                   # run by the askEachAgentInCollectionAndExecLocalCode
-                   # structure in mActions.py
-                   if int(self.number/2)*2 == self.number:
-                         oddEven = "print 'my number is even'"
-                   else: oddEven = "print 'my number is odd'"
-                   setLocalCode("print 'agent %s # %d made a big jump';"\
-                                           % (self.agType,self.number) +\
-                                oddEven)
 
 
     # report
     def reportPosition(self,**d):
         print self.agType, "agent # ", self.number, " is at X = ", \
                self.xPos, " Y = ", self.yPos
+
+    # add a task (from v. 1.35 of SLAPP)
+    # common is derived importing Tools
+    def addTask(self):
+
+        newTask="all dance"
+
+        print "agent", self.number, "added a task for cycle", common.cycle + 1
+        if not common.addTasks.has_key(common.cycle + 1):
+            common.addTasks[common.cycle + 1]=[]
+        common.addTasks[common.cycle + 1].append(newTask)
+
 
 
 # returns -1, 0, 1  with equal probability
