@@ -197,10 +197,14 @@ last change: fixed an error with Tkinter, using IPython 5.0 or greater
      actionDictionary, unnecessary, but kept in Tools.py of $$slapp$$ for
      retro compatibility
 
-(2016 08 23)
+(2016 08 25)
 
 1.35 Introduced the capability of the agents of adding or eliminating tasks in
      the schedule (at the level of the schedule reported in the schedule.xls
      file)
 
-     Have a look  
+     Have a look both to the example in 'basic' project, file
+     scheduleAddElim.xls (to use it, rename it as schedule.xls) and to the
+     section 'Agents adding and eliminating tasks into the detailed schedule'
+     of the Reference Handbook
+'
