@@ -34,7 +34,7 @@ class ModelSwarm:
         # the environment
         task="0 0".split() #in case of repeated execution without restarting the shell
         self.ff="" #in case of repeated execution without restarting the shell
-        self.nAgents = nAgents
+        self.nAgents = nAgents # bland ones
         self.agentList = []
 
         self.worldXSize= worldXSize
@@ -45,6 +45,36 @@ class ModelSwarm:
         self.types=agTypeFile.read().split()
         agTypeFile.close()
         #print self.types
+
+        # classes of the agents
+        self.classes={}
+        try:
+            agClassFile=open(project+"/agClassFile.txt","r")
+            items=agClassFile.read().split()
+            agClassFile.close()
+            for i in range(0,len(items),2):
+                self.classes[items[i]]=items[i+1]
+
+        except:
+        # all the types have class Agent
+            for i in range(len(self.types)):
+                self.classes[self.types[i]]="Agent"
+
+
+        # check consistency between types and classes
+        if len(self.types) != len(self.classes):
+            print 'Mismatch in number of types and classes.'
+            os.sys.exit(1)
+        for i in range(len(self.types)):
+            if not self.classes.has_key(self.types[i]):
+                print 'Type', self.types[i], 'has no class.'
+                os.sys.exit(1)
+
+        print '\nAgents and their classes'
+        for i in range(len(self.classes)):
+            print 'agents', self.types[i],'have class',\
+                  self.classes[self.types[i]]
+        print "'bland' agents, if any, have always class Agent\n"
 
         # operating sets of the agents
         try:
@@ -78,7 +108,7 @@ class ModelSwarm:
         bottomY =int(-self.worldYSize/2)
         topY=int(self.worldYSize-1 -self.worldYSize/2)
 
-        # internal agents
+        # internal agents (bland ones)
         for i in range(self.nAgents):
             anAgent = Agent(i, self.worldState,
                     random.randint(leftX,rightX),
@@ -110,6 +140,7 @@ class ModelSwarm:
                "agents: lacking the specific file", opSet+".txt"
         print
 
+        # crating the agents
         for agType in self.types:
 
          if agType+".txt" in files:
@@ -123,11 +154,18 @@ class ModelSwarm:
                     # of agents
                #print line.split()
 
-               # specialized creation function for each model
-               # form mActions.py in the model folder
+               # a set of specialized creation function for each model
+               # are in mActions.py in the model folder
 
-               createTheAgent(self,line,num,leftX,rightX,bottomY,topY,agType)
-               #explictly pass self, here we use a function
+               if self.classes[agType]=="Agent":
+                 createTheAgent(self,line,num,leftX,rightX,bottomY,topY,agType)
+                 #explictly pass self, here we use a function
+
+               else:
+                 # using ad hoc classes  
+                 createTheAgent_Class(self,line,num,leftX,rightX,bottomY,topY,\
+                        agType,self.classes[agType]) # the last is the class
+
 
            f.close()
 

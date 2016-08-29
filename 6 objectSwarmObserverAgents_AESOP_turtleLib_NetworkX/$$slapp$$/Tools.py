@@ -1,6 +1,7 @@
 import random
 import os
 import commonVar as common
+import inspect
 
 """
 A memo from
@@ -19,6 +20,44 @@ identifier2  gets bound to a dictionary whose items are the names
 and values of the extra named arguments (or the empty dictionary,
 if there are none).
 """
+
+# a function to apply different ways of writing method in the call of the
+# run a method over an instance
+def applyMethod(instance,method,**k):
+  # we wrote the method as a str (preferred way form v.1.36)
+  if type(method) is str:
+    #print method,"is a string"
+    c=instance.__class__
+    #print c
+    try:exec("test=inspect.ismethod(c."+method+")")
+    except: test=False
+    if test:
+      exec("c."+method+"(instance,**k)")
+      #print instance.b
+      return True
+    else:
+      print "Warning, class", c.__name__, "does not have the method", method
+      return False
+
+  # we wrote the method in the unbound way (for compatibility with previous versions)
+  test=inspect.ismethod(method)
+  if not test:
+    print "Warning,", method, "is neither an unbound method nor a str"
+    return False
+
+  c_instance=instance.__class__
+  c_method=method.im_class
+  # about python 3 and im_class, see paragraph A.28 at
+  # http://www.diveintopython3.net/porting-code-to-python-3-with-2to3.html
+  #print c_instance, c_method
+  if c_instance != c_method:
+    print "Warning, the class of the instance ("+c_instance.__name__+\
+          ") and that of the methond ("+c_method.__name__+") are not consistent"
+    return False
+  else:
+    method(instance,**k)
+    return True
+
 
 # dictionary of the action groups (uilitynnecessary, kept only for
 # retro compatibility)
@@ -56,12 +95,11 @@ def askEachAgentInCollectionAndExecLocalCode(collection,method,**k):
     setLocalCode("")
 
     for a in collection:
-            if common.debug: method(a,**k)
+            if common.debug: applyMethod(a,method,**k)
             else:
-             try: method(a,**k)
+             try: applyMethod(a,method,**k)
              except:
-              print 'cannot apply (case 1) method', method.__name__, 'to agent number', \
-                    a.number
+              print 'cannot apply (case 1) method to agent number', a.number
               pass
             # if we use k (a dictionary), the same notation has to
             # be placed into the agent methods

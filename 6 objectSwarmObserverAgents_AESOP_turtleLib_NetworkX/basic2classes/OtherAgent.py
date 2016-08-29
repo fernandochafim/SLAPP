@@ -3,9 +3,17 @@ from Tools import *
 from agTools import *
 from Agent import *
 
-class NewAgent(Agent):
+class OtherAgent(Agent):
     def __init__(self, number,myWorldState,
                  xPos, yPos, lX =-20,rX=19, bY=-20,tY=19, agType=""):
+
+        #super.__init__(self, number,myWorldState,
+        #             xPos, yPos, lX =-20,rX=19, bY=-20,tY=19, agType="")
+        # it is anyway possible to initilize the environment directly,
+        # commenting the call above to the super class and uncommenting
+        # the rows below
+
+
         # the environment
         self.agOperatingSets=[]
         self.number = number
@@ -22,11 +30,17 @@ class NewAgent(Agent):
         print "agent", self.agType, "#", self.number, \
      	      "has been created at", self.xPos, ",", self.yPos
 
+        # it is possible to avoid the assignment above sending init
+        # order to the superclass
 
-    # ",**d" in the parameter lists of the methods is a place holder
-    # in case we use, calling the method, a dictionary as last par
+
 
     # sleeping
     def sleep(self,**d):
         print "I'm %s agent # %d: " % (self.agType,self.number),
         print "happy to sleep!"
+
+    # movement
+    def randomMovement(self,**k):
+        print "I'm %s agent # %d: " % (self.agType,self.number),
+        print "absolytely not moving!!!"

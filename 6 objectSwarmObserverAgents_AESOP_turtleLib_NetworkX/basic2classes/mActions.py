@@ -21,8 +21,11 @@ def do1(address):
             # the format is: collection, method, parameters by name
             # ask each agent, without parameters
             # the potential jump is the same for all the agents
+
+            # NB passing the method as a str having agents of heterogeneous 
+            # classes
             askEachAgentInCollectionAndExecLocalCode \
-                     (address.agentListCopy,Agent.randomMovement,
+                     (address.agentListCopy,"randomMovement",
                                         jump=random.uniform(0,5))
 
 def createTheAgent(self,line,num,leftX,rightX,bottomY,topY,agType):
@@ -39,6 +42,33 @@ def createTheAgent(self,line,num,leftX,rightX,bottomY,topY,agType):
                 else:
                  print "Error in file "+agType+".txt"
                  os.sys.exit(1)
+
+def createTheAgent_Class(self,line,num,leftX,rightX,bottomY,topY,agType,agClass):
+                #explictly pass self, here we use a function
+                #print "leftX,rightX,bottomY,topY", leftX,rightX,bottomY,topY
+
+
+                # loading classes with repetition (but only creating agents)
+                try: exec("from "+agClass+" import *")
+                except:
+                    print "Class", agClass, "not found."
+                    os.sys.exit(1)
+
+                if len(line.split())==1:
+                  try:
+                    exec("anAgent = "+agClass+"(num, self.worldState,"+\
+                          "random.randint(leftX,rightX),"+\
+                          "random.randint(bottomY,topY),"+\
+                          "leftX,rightX,bottomY,topY,agType=agType)")
+                    self.agentList.append(anAgent)
+                  except:
+                    print "Argument error creating an instance of class",agClass
+                    os.sys.exit(1)
+
+                else:
+                 print "Error in file "+agType+".txt"
+                 os.sys.exit(1)
+
 
 def otherSubSteps(subStep, address):
             return False
