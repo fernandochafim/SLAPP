@@ -7,13 +7,14 @@ class OtherAgent(Agent):
     def __init__(self, number,myWorldState,
                  xPos, yPos, lX =-20,rX=19, bY=-20,tY=19, agType=""):
 
-        #super.__init__(self, number,myWorldState,
-        #             xPos, yPos, lX =-20,rX=19, bY=-20,tY=19, agType="")
+        Agent.__init__(self, number,myWorldState,
+                     xPos, yPos, lX =-20,rX=19, bY=-20,tY=19, agType=agType)
         # it is anyway possible to initilize the environment directly,
         # commenting the call above to the super class and uncommenting
         # the rows below
 
 
+        """
         # the environment
         self.agOperatingSets=[]
         self.number = number
@@ -32,7 +33,7 @@ class OtherAgent(Agent):
 
         # it is possible to avoid the assignment above sending init
         # order to the superclass
-
+        """
 
 
     # sleeping
