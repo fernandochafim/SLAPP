@@ -438,32 +438,40 @@ class ModelSwarm:
         #if task[0] is 'all' or a type of agent
         if check(task[0],self.types,self.operatingSets):
             if self.share!=0:
-               if common.debug: exec "askEachAgentInCollection(localList,Agent"+"."+task[2]+")"
+               # NOTE *** the ask with Agent.method in the form
+               # "askEachAgentInCollection(localList,Agent"+"."+task[2]+")" is
+               # still operating for old calls in mActions.py modules nut it is
+               # deprecated here, confusing the execution in presence of
+               # subclasses of Agent
+               if common.debug: exec "askEachAgentInCollection(localList,task[2])"
                else:
-                try: exec "askEachAgentInCollection(localList,Agent"+"."+task[2]+")"
+                try: exec "askEachAgentInCollection(localList,task[2])"
                 except:
-                    print "Warning, method", task[2],"does not exist in class Agent"
+                    print "Warning, method", task[2],"does not exist"
             else:
-               if common.debug: exec "askEachAgentInCollection(localList,Agent"+"."+task[1]+")"
+               # see NOTE *** above
+               if common.debug: exec "askEachAgentInCollection(localList,task[1])"
                else:
-                try: exec "askEachAgentInCollection(localList,Agent"+"."+task[1]+")"
+                try: exec "askEachAgentInCollection(localList,task[1])"
                 except:
-                    print "Warning, method", task[1],"does not exist in class Agent"
+                    print "Warning, method", task[1],"does not exist"
 
         #if task[0] is an opSet
         if task[0] in self.operatingSets:
             if self.share!=0:
-               if common.debug: exec "askEachAgentInCollection(localList,Agent"+"."+task[2]+")"
+               # see NOTE *** above
+               if common.debug: exec "askEachAgentInCollection(localList,task[2])"
                else:
-                try: exec "askEachAgentInCollection(localList,Agent"+"."+task[2]+")"
+                try: exec "askEachAgentInCollection(localList,task[2])"
                 except:
-                    print "Warning, method", task[2],"does not exist in class Agent"
+                    print "Warning, method", task[2],"does not exist"
             else:
-               if common.debug: exec "askEachAgentInCollection(localList,Agent"+"."+task[1]+")"
+               # see NOTE *** above
+               if common.debug: exec "askEachAgentInCollection(localList,task[1])"
                else:
-                try: exec "askEachAgentInCollection(localList,Agent"+"."+task[1]+")"
+                try: exec "askEachAgentInCollection(localList,task[1])"
                 except:
-                    print "Warning, method", task[1],"does not exist in class Agent"
+                    print "Warning, method", task[1],"does not exist"
 
 
 

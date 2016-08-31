@@ -73,7 +73,8 @@ def applyMethod(instance,method,**k):
       exec("result=c."+method+"(instance,**k)")
       return result
     else:
-      print "Warning, class", c.__name__, "does not have the method", method
+      print "Warning, class", c.__name__, "(or above) of agent", \
+             instance.agType, "does not have the method", method
       return False
 
 
