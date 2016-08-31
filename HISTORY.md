@@ -207,4 +207,8 @@ last change: fixed an error with Tkinter, using IPython 5.0 or greater
      scheduleAddElim.xls (to use it, rename it as schedule.xls) and to the
      section 'Agents adding and eliminating tasks into the detailed schedule'
      of the Reference Handbook
-'
+
+(2016 08 31)
+
+1.36 Big step, now SLAPP uses agent of different classes, as in the example
+     basic2classes
