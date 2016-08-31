@@ -1,7 +1,7 @@
 #WorldState.py
 from Tools import *
 
-class WorldState:
+class WorldState(object):
     def __init__(self):
         # the environment
         self.generalMovingProb=1

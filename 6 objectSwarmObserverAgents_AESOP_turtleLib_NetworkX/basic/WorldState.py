@@ -1,7 +1,7 @@
 #WorldState.py
 from Tools import *
 
-class WorldState:
+class WorldState(object):
     def __init__(self):
         # the environment
         self.generalMovingProb=1
@@ -12,8 +12,8 @@ class WorldState:
 
     # set generalMovingProb
     def setGeneralMovingProb(self,**d):
-        if d.has_key("generalMovingProb"):
-            self.generalMovingProb=d["generalMovingProb"]
+        if d.has_key("setGeneralMovingProb"):
+            self.generalMovingProb=d["setGeneralMovingProb"]
             print "general moving probability now set to",\
                   self.generalMovingProb, "in world state"
         else:

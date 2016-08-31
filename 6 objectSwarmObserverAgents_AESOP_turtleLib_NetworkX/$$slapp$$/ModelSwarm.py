@@ -162,7 +162,7 @@ class ModelSwarm:
                  #explictly pass self, here we use a function
 
                else:
-                 # using ad hoc classes  
+                 # using ad hoc classes
                  createTheAgent_Class(self,line,num,leftX,rightX,bottomY,topY,\
                         agType,self.classes[agType]) # the last is the class
 
@@ -414,10 +414,10 @@ class ModelSwarm:
                   try: exec "localList[0]."+task[2]+"()"
                   except: print task[2], "undefined in WorldState"
 
-            # using WorldStte to set/get values
+            # using WorldState to set/get values
 
             else:
-                try:  aValue = float(task[1]) # does task[1] contains                                              # a number?
+                try:  aValue = float(task[1]) # does task[1] contains a number?                                             # a number?
                 except:
                     print "After WorldState, in schedule.xls we wait: "+\
                           "'computationalUse' or 'specialUse' or "+\
@@ -427,9 +427,9 @@ class ModelSwarm:
                     d={}
                     d[task[2]]=float(task[1])
                     #localList contains a unique worldState instance
-                    if common.debug: exec "askEachAgentInCollection(localList,"+task[0]+"."+task[2]+", **d)"
+                    if common.debug: exec "localList[0]."+task[2]+"(**d)"
                     else:
-                      try: exec "askEachAgentInCollection(localList,"+task[0]+"."+task[2]+", **d)"
+                      try: exec "localList[0]."+task[2]+"(**d)"
                       except: print task[2], "undefined in WorldState"
                 else:
                     print "Unable to handle a missing task in WorldState schedule."
@@ -494,6 +494,7 @@ def check(s,aList,opSets):
     if s.find("bland")==0: found=True
     for name in aList:
         if s.find(name)==0:found=True
+    if s.find("WorldState")==0:found=True
 
     # agent not found (maybe 'dummy' has been set as a fictitious
     # agent name, to eliminate a task due to the action made by

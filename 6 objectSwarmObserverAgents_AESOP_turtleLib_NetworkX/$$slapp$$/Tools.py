@@ -21,45 +21,63 @@ and values of the extra named arguments (or the empty dictionary,
 if there are none).
 """
 
-# a function to apply different ways of writing method in the call of the
+# two functions to apply different ways of writing method in the call of the
+# run a method over an instance
+
+# extract the method from the unbound method m
+def extractMethod(m):
+  # about python 3 and im_class, see paragraph A.28 at
+  # http://www.diveintopython3.net/porting-code-to-python-3-with-2to3.html
+  name=""
+  c=m.im_class                      # class of m
+  while name != 'object':
+   dk=c.__dict__.keys()             # keys   in the dict of c
+   dv=c.__dict__.values()           # values in the dict of c
+   f=m.__func__                     # the implicit func of m
+   try:
+        method=dk[dv.index(f)]      # the key of the value==f
+        name='object'               # to leave while
+   except:
+        c=c.__bases__[0]            # moving to super class
+        name=c.__name__             # it top recursion, name contains
+                                    # 'object'as our SuperAgent inherits
+                                    # from object
+  return method
+
+
 # run a method over an instance
 def applyMethod(instance,method,**k):
-  # we wrote the method as a str (preferred way form v.1.36)
-  if type(method) is str:
-    #print method,"is a string"
+  # NB, the call of this function can be included in a try/except
+  # strucutre to catch the cases of invalid dotted couples
+  # class.method
+
+  # we wrote the method in the 'unbound method' way (accepted for
+  # compatibility with versions < 1.36), mainly using the generic
+  # class Agent, maybe to be substituted by the class of the instance
+  if inspect.ismethod(method):
+     # unbound method case, extract method in str format
+     method = extractMethod(method)
+
+  # we wrote the method as a str (preferred way from v.1.36)
+  if not type(method) is str:
+    print method,"is neither an unbound method nor a string"
+    return False
+  else:
+    # method is an str
+    # find the class of the instance
     c=instance.__class__
-    #print c
+    # check if that class has the method 'method'
     try:exec("test=inspect.ismethod(c."+method+")")
     except: test=False
     if test:
-      exec("c."+method+"(instance,**k)")
-      #print instance.b
-      return True
+      exec("result=c."+method+"(instance,**k)")
+      return result
     else:
       print "Warning, class", c.__name__, "does not have the method", method
       return False
 
-  # we wrote the method in the unbound way (for compatibility with previous versions)
-  test=inspect.ismethod(method)
-  if not test:
-    print "Warning,", method, "is neither an unbound method nor a str"
-    return False
 
-  c_instance=instance.__class__
-  c_method=method.im_class
-  # about python 3 and im_class, see paragraph A.28 at
-  # http://www.diveintopython3.net/porting-code-to-python-3-with-2to3.html
-  #print c_instance, c_method
-  if c_instance != c_method:
-    print "Warning, the class of the instance ("+c_instance.__name__+\
-          ") and that of the methond ("+c_method.__name__+") are not consistent"
-    return False
-  else:
-    method(instance,**k)
-    return True
-
-
-# dictionary of the action groups (uilitynnecessary, kept only for
+# dictionary of the action groups (not necessary, kept only for
 # retro compatibility)
 actionDictionary={}
 
@@ -69,20 +87,14 @@ def askEachAgentInCollection(collection,method,**k):
     """ collection, method, dict. of the parameters (may be empty)"""
 
     for a in collection:
-            #print "\naskEachAgentInCollection", a.agType, a.number, method
-            """
-            if a.agType=="recipes" and a.factoryInWhichRecipeIs!=None:
-               print "askEachAgentInCollection", a.number, "is in", a.factoryInWhichRecipeIs.number
-            if a.agType=="recipes" and a.factoryInWhichRecipeIs==None:
-               print "askEachAgentInCollection", a.number, "is in", a.factoryInWhichRecipeIs
-            """
-            if common.debug: method(a,**k)
+            if common.debug: applyMethod(a,method,**k)
             else:
              try:
-                method(a,**k)
+                applyMethod(a,method,**k)
              except:
-              print 'cannot apply (case 0) method', method.__name__, 'to agent number', \
-                    a.number, 'of type ',a.agType
+              print 'cannot apply (case 0) method', method,\
+                    'to agent number', a.number, 'of type ',a.agType
+              # very special case
               if a.agType=="recipes": print "first step", a.content[0]
               pass
             # if we use k (a dictionary), the same notation has to
@@ -99,7 +111,8 @@ def askEachAgentInCollectionAndExecLocalCode(collection,method,**k):
             else:
              try: applyMethod(a,method,**k)
              except:
-              print 'cannot apply (case 1) method to agent number', a.number
+              print 'cannot apply (case 1) method', method,\
+                    'to agent number', a.number, 'of type ',a.agType
               pass
             # if we use k (a dictionary), the same notation has to
             # be placed into the agent methods
@@ -111,11 +124,11 @@ def askEachAgentInCollectionAndExecLocalCode(collection,method,**k):
 # applying a method to an instance of a class
 def askAgent(agent,method,**k):
     """ agent, method, dict. of the parameters (may be empty)"""
-    if common.debug: method(agent,**k)
+    if common.debug: applyMethod(agent,method,**k)
     else:
-     try: method(agent,**k)
+     try: applyMethod(agent,method,**k)
      except:
-        print 'cannot apply (case 2) method', method.__name__, 'to agent number', \
+        print 'cannot apply (case 2) method', method, 'to agent number', \
               a.number
         pass
 
@@ -124,11 +137,11 @@ def askAgentAndExecLocalCode(agent,method,**k):
     """ agent, method, dict. of the parameters (may be empty)"""
     setLocalCode("")
 
-    if common.debug: method(agent,**k)
+    if common.debug: applyMethod(agent,method,**k)
     else:
-     try: method(agent,**k)
+     try: applyMethod(agent,method,**k)
      except:
-        print 'cannot apply (case 3) method', method.__name__, 'to agent number', \
+        print 'cannot apply (case 3) method', method, 'to agent number', \
               a.number
         pass
 

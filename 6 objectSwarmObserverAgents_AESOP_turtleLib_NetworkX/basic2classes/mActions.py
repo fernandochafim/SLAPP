@@ -22,11 +22,21 @@ def do1(address):
             # ask each agent, without parameters
             # the potential jump is the same for all the agents
 
-            # NB passing the method as a str having agents of heterogeneous 
-            # classes
+            # alternatively, we can pass the method as a str
+            # (new way from v.1.36)
             askEachAgentInCollectionAndExecLocalCode \
                      (address.agentListCopy,"randomMovement",
                                         jump=random.uniform(0,5))
+
+            # or as an unbound method (the way used for v. <1.36)
+
+            #askEachAgentInCollectionAndExecLocalCode \
+            #         (address.agentListCopy,Agent.randomMovement,
+            #                            jump=random.uniform(0,5))
+
+            # the str way is preferred for agents subclassing Agent class
+            # the other one is maintained for compatibility with
+            # previous mActions.py files
 
 def createTheAgent(self,line,num,leftX,rightX,bottomY,topY,agType):
                 #explictly pass self, here we use a function
