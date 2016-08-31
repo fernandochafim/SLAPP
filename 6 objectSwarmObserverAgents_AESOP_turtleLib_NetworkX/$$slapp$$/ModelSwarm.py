@@ -502,12 +502,11 @@ def check(s,aList,opSets):
     if s.find("bland")==0: found=True
     for name in aList:
         if s.find(name)==0:found=True
-    if s.find("WorldState")==0:found=True
 
     # agent not found (maybe 'dummy' has been set as a fictitious
     # agent name, to eliminate a task due to the action made by
     # an agent)
-    if not found and not s in opSets and s != '#':
+    if not found and not s in opSets and s != '#' and not s.find("WorldState")==0:
         print "agent", s, 'does not exist'
 
     return found
