@@ -44,4 +44,4 @@ class OtherAgent(Agent):
     # movement
     def randomMovement(self,**k):
         print "I'm %s agent # %d: " % (self.agType,self.number),
-        print "absolytely not moving!!!"
+        print "absolutely not moving!!!"

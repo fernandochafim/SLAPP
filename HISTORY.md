@@ -212,3 +212,8 @@ last change: fixed an error with Tkinter, using IPython 5.0 or greater
 
 1.36 Big step, now SLAPP uses agent of different classes, as in the example
      basic2classes
+
+(2016 09 01)
+
+1.4  Correction of minor problems and alignment of the Reference Handbook to
+     the novelty of the multi-class capability
