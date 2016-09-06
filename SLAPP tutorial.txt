@@ -1,7 +1,9 @@
 		SIMPLEBUG SLAPP TUTORIAL
 
+(You are supposed to have downloaded SLAPP as a zip file and to have unzipped it.)
 
-SLAPP = Swarm-Like Agent Protocol in Python, by Pietro Terna
+SLAPP = Swarm-Like Agent Protocol in Python, by Pietro Terna,
+https://github.com/terna/SLAPP
 
 Swarm  = www.swarm.org
 Python = www.python.org

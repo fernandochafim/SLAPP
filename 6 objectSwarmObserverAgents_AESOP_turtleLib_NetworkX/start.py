@@ -12,7 +12,7 @@
 
 def runSLAPP():
  global start_pyDir
- print "SLAPP 1.4 build 20160902"
+ print "SLAPP 1.41 build 20160904"
  import os
 
 
