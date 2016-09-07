@@ -1,6 +1,6 @@
-Here we have both a tutorial and an agent-based simulation shell,
-coming from the Swarm (www.swarm.org) project, and named SLAPP for Swarm-Like Agent
-Protocol in Python.
+Here we have both a tutorial on agent-based programming foundations and an
+agent-based simulation shell, coming from the Swarm (www.swarm.org) project,
+and named SLAPP for Swarm-Like Agent Protocol in Python.
 
 You can find SLAPP as an Agent-based Model (ABM) shell, in the folder # 6.
 
@@ -16,8 +16,8 @@ http://download.savannah.gnu.org/releases/swarm/apps/objc/sdg/swarmapps-objc-2.2
 or at
 http://nongnu.askapache.com/swarm/apps/objc/sdg/swarmapps-objc-2.2-3.tar.gz
 or at
-http://eco83.econ.unito.it/terna/swarm/swarmapps-objc-2.2-3.tar.gz
-(Addresses verified on August 2015)
+http://terna.to.it/swarm/swarmapps-objc-2.2-3.tar.gz
+(last visited, September 2016)
 
 
-Pietro Terna, starting October 2008, this version August 2015
+Pietro Terna, October 2008 (this version September 2016)
