@@ -5,7 +5,7 @@ SLAPP <img src="./-pictures/slapp-logo.png" height="90" />
 
 Swarm-Like Agent Protocol in Python
 
-Here you have SLAPP **v.1.41 build 20160904** (in the [SLAPP repository](http://terna.to.it/slapp_dep/) you have related material and old versions).
+Here you have SLAPP **v.1.41 build 20160904** (in the [SLAPP repository](http://terna.to.it/slapp_dep/) you have related material and very old versions; more recent ones are here in the Git).
 
 We have here also a [**Reference Handbook**](https://github.com/terna/SLAPP/blob/v.1.41/SLAPP_Reference_Handbook.pdf) (it is still a draft and has to be improved).
 
@@ -18,15 +18,17 @@ SLAPP logo: credits to [Steve Rogers](https://www.linkedin.com/in/shrogers).
 
 How to start: a quick introduction
 ====
-Read the content of the file "SLAPP tutorial.txt" if you are interested in an introduction to Agent-based programming techniques in a general way; the tutorial shows the fundamental ideas of the[Swarm](http://www.swarm.org) project, which are the roots of the SLAPP construction; **NB**, to use SLAPP, it is not necessary to study that tutorial.
+If you are interested in an **introduction to Agent-based programming** techniques in a general way, read the content of the file "SLAPP tutorial.txt" ; the tutorial shows the fundamental ideas of the [Swarm](http://www.swarm.org) project, i.e., the roots of the SLAPP construction; **NB**, to use SLAPP, it is not necessary to study this tutorial.
 
-@@@To start running the agent-based shell, read the content of the file "SLAPP shell.txt" and install the required libraries (look at the Appendix A of the Reference Handbook in this folde); then open a terminal, go into the SLAPP main folder, and
+To start **running the agent-based shell**, read the content of the file
+"SLAPP shell.txt" and install the required libraries (about library installation, above all look at the Appendix A of the Reference Handbook here in this same folder); then, via a terminal, go into the SLAPP main folder (that where you have unzipped SLAPP), and:
 
 1 - launch the application "basic" as in the following window:
 
 <img src="./-pictures/t1.png" />
 
-The effect is (plain text output only):
+T
+the effect is (plain text output only):
 
 <img src="./-pictures/t2.png" />
 
@@ -36,7 +38,7 @@ or
 
 <img src="./-pictures/t3.png" />
 
-The effect is (plain text output):
+the effect is (plain text output):
 
 <img src="./-pictures/t4.png" />
 
@@ -50,7 +52,7 @@ or
 
 <img src="./-pictures/t6.png" />
 
-The effect is (plain text output):
+the effect is (plain text output):
 
 <img src="./-pictures/t7.png" />
 
@@ -58,9 +60,18 @@ and as graphical output:
 
 <img src="./-pictures/t8.png" />
 
-Above you have different launching ways, using runShell.py (preferred) or
-start.py in folder "6 objectSwarmObserverAgents_AESOP_turtleLib_NetworkX"
-(also possible)
+If you prefer to work with Python in a notebook&mdash;using (i) the [IPython](http://ipython.org) interactive version of Python or, better, (ii) the *agnostic language shell* named [Jupyter](http://jupyter.org)&mdash; via a terminal go into the main SLAPP folder (that where you have unzipped SLAPP) and launch Jupyter as below:
 
-A good starting point about *running* SLAPP is the Reference Handbook,
-section *How to run SLAPP*
+<img src="./-pictures/t9.png" />
+
+Then chose *iRunShell.ipynb* as in:
+
+<img src="./-pictures/t10.png" />
+
+Finally, run the notebook placing the cursor in the first cell and  hitting the <img src="./-pictures/forwardframe.png" width="18" height="18"/> key in the top bar (or entering Shift+Enter); then chose a project as in:
+
+<img src="./-pictures/t11.png" />
+
+The results will be the same reported above in the non interactive presentation.
+
+Please note that we have only a set of example. A good starting point about *running* SLAPP is the Reference Handbook, section **How to *run* SLAPP**.
