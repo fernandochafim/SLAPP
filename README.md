@@ -5,7 +5,7 @@ SLAPP <img src="./-pictures/slapp-logo.png" height="90" />
 
 Swarm-Like Agent Protocol in Python
 
-Here you have SLAPP **v.1.41 build 20160904** (in the [SLAPP repository](http://terna.to.it/slapp_dep/) you have related material and very old versions; more recent ones are here in the Git).
+Here you have SLAPP **v.1.41 build 20160908** (in the [SLAPP repository](http://terna.to.it/slapp_dep/) you have related material and very old versions; more recent ones are here in the Git).
 
 We have here also a [**Reference Handbook**](https://github.com/terna/SLAPP/blob/v.1.41/SLAPP_Reference_Handbook.pdf) (it is still a draft and has to be improved).
 
@@ -60,7 +60,7 @@ and as graphical output:
 
 <img src="./-pictures/t8.png" />
 
-If you prefer to work with Python in a notebook&mdash;using (i) the [IPython](http://ipython.org) interactive version of Python or, better, (ii) the *agnostic language shell* named [Jupyter](http://jupyter.org)&mdash; via a terminal go into the main SLAPP folder (that where you have unzipped SLAPP) and launch Jupyter as below:
+If you prefer to work with Python in a notebook&mdash;using (i) the [IPython](http://ipython.org) interactive version of Python or, better, (ii) the *agnostic language shell* named [Jupyter](http://jupyter.org)&mdash;via a terminal go into the main SLAPP folder (that where you have unzipped SLAPP) and launch Jupyter as below:
 
 <img src="./-pictures/t9.png" />
 

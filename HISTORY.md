@@ -218,3 +218,7 @@ last change: fixed an error with Tkinter, using IPython 5.0 or greater
 1.4  Correction of minor problems and alignment of the Reference Handbook to
      the novelty of the multi-class capability, look at the Section "SLAPP
      multi-class: the *basic2classes* example"
+
+(2016 09 08)
+
+1.41 Improving the introductory files and the Reference Handbook

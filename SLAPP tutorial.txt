@@ -8,8 +8,9 @@ https://github.com/terna/SLAPP
 Swarm  = www.swarm.org
 Python = www.python.org
 
-This tutorial introduces the user through the development of a SLAPP
-model that makes use of a lot of the functionalities of Swarm.
+This tutorial introduces the user through the development of aan agent-based
+model  that makes use of a lot of the ideas of Swarm; ideas now rooted 
+in the SLAPP structure.
 
 The model refers to the movement of a bug, randomly walking in a 2D space.
 
