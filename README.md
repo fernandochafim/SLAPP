@@ -5,11 +5,15 @@ SLAPP <img src="./-pictures/slapp-logo.png" height="90" />
 
 Swarm-Like Agent Protocol in Python
 
-Here you have SLAPP **v.1.41 build 201609116** (in the [SLAPP repository](http://terna.to.it/slapp_dep/) you have related material and very old versions; more recent ones are here in the Git).
+Here you have SLAPP **v.1.5 build 201609117** (in the [SLAPP repository](http://terna.to.it/slapp_dep/) you have related material and very old versions; more recent ones are here in the Git).
 
-We have here also a [**Reference Handbook**](https://github.com/terna/SLAPP/blob/v.1.41/SLAPP_Reference_Handbook.pdf) (it is still a draft and has to be improved).
+We have here also a [**Reference Handbook**](https://github.com/terna/SLAPP/blob/v.1.5/SLAPP_Reference_Handbook.pdf) (it is still a draft and has to be improved).
 
 Five chapters of the book of Boero, R., Morini, M., Sonnessa, M., and Terna, P.,  [Agent-based Models of the Economy - From Theories to Applications](http://www.palgrave.com/page/detail/agentbased-models-of-the-economy-/?K=9781137339805), are related to SLAPP.
+
+We have also a [SLAPP online](http://slapp-online.net:6789) presentation to simplify
+the initial knowledge of SLAPP; write to *pietro.terna at unito.it* to obtain
+an access.
 
 ---
 SLAPP logo: credits to [Steve Rogers](https://www.linkedin.com/in/shrogers).

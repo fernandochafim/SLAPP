@@ -222,3 +222,8 @@ last change: fixed an error with Tkinter, using IPython 5.0 or greater
 (2016 09 11)
 
 1.41 Improving the introductory files and the Reference Handbook
+
+(2016 09 17)
+
+1.5  Creating [http://slapp-online.net:6789](http://slapp-online.net:6789) to
+     simplify the initial knowledge of SLAPP
