@@ -9,6 +9,6 @@ exec < ./userNames.txt
 
 while read LINE; do
 
-    addSLAPP_toUser.sh $LINE
+    ./addSLAPP_toUser.sh $LINE
 
 done
