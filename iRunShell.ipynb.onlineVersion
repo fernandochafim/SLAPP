@@ -35,10 +35,19 @@
     "\n",
     "<span style=\"color:red\">Please, do not close this window before having choosen *File/Close and Halt* in the Menu and having hit *Logout*.</span>\n",
     "\n",
-    "A few memos: (i) with New/Terminal from the entry online page, you can directly work with your virtual machine (with a *bash* shell in an Ubuntu environment); (ii) opening a .txt or .py file via the entry page of Jupyter, you can edit and save it; (iii) you can also *ssh* to your account, as *yourUserName@slapp-online.net*, using your password.\n",
+    "A few memos: (i) with **New/Terminal** from the entry online page, you can directly work with your virtual machine (with a *bash* shell in an Ubuntu environment); (ii) opening a .txt or .py file via the entry online page of Jupyter, you can edit and save it; (iii) the button **Upload** in the entry online page allows you to upload files; (iv) outside the Jupiter connection, you can also *ssh* to your account, as *yourUserName@slapp-online.net*, using your password.\n",
     "\n",
     "<span style=\"color:blue\">**Warning**: to start a new project or to modify an existing one, please create a new folder within the folder <span style=\"font-family:courier\">\"**6 objectSwarmObserverAgents_AESOP_turtleLib_NetworkX**\"</span>. In case, pay attention to use a new name: the content of the folders which by default are reported in SLAPP, is renewed each time the shell is updated by the system administrator.</span>"
    ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {
+    "collapsed": true
+   },
+   "outputs": [],
+   "source": []
   }
  ],
  "metadata": {
