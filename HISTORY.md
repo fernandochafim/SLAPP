@@ -227,3 +227,7 @@ last change: fixed an error with Tkinter, using IPython 5.0 or greater
 
 1.5  Creating [http://slapp-online.net:6789](http://slapp-online.net:6789) to
      simplify the initial knowledge of SLAPP
+
+(2016 09 25)
+
+1.6  A step ahead in SLAPP presentation
