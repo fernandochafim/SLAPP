@@ -5,15 +5,17 @@ SLAPP <img src="./-pictures/slapp-logo.png" height="90" />
 
 Swarm-Like Agent Protocol in Python
 
-Here you have SLAPP **v.1.6 build 20161016** (in the [SLAPP repository](http://terna.to.it/slapp_dep/) you have related material and very old versions; more recent ones are here in the Git).
+Here you have SLAPP **v.1.6 build 20161031** (in the [SLAPP repository](http://terna.to.it/slapp_dep/) you have related material and very old versions; more recent ones are here in the Git).
 
 We have here also a [**Reference Handbook**](https://github.com/terna/SLAPP/blob/v.1.6/SLAPP_Reference_Handbook.pdf) (it is still a draft and has to be improved).
 
 Five chapters of the book of Boero, R., Morini, M., Sonnessa, M., and Terna, P.,  [Agent-based Models of the Economy - From Theories to Applications](http://www.palgrave.com/page/detail/agentbased-models-of-the-economy-/?K=9781137339805), are related to SLAPP.
 
 We have also a [SLAPP online](http://slapp-online.net:6789) running version to simplify
-the initial knowledge of SLAPP; write to *pietro.terna at unito.it* to obtain
-an access.
+the initial knowledge of SLAPP; write to *pietro.terna at unito.it* to obtain an access.
+
+In October 2016 I taught a course on *Agent-Based Simulation* for the [Master in Data Science for Complex Economic Systems, MADAS](http://www.madas.carloalberto.org/) and for the [Vilfredo Pareto Doctorate in Economics](http://www.sde.unito.it/). I have introduced SLAPP both as a tutorial in agent-based programming and a simulation shell, with some comparative references to NetLogo. Look [here](http://terna.to.it/sim/2016/) at the contents and videos of the course; have also a preliminary look to the [README.txt](http://terna.to.it/sim/2016/_README.txt) file.  
+The file 2.mp4 of lesson 4 contains, from minute 41, a short introduction to the use of SLAPP online.
 
 ---
 SLAPP logo: credits to [Steve Rogers](https://www.linkedin.com/in/shrogers).
